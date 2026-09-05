@@ -4,7 +4,7 @@ using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
 
-namespace Junkyard.Scripts;
+namespace Forge.Scripts;
 
 // Required attribute for registering the Mod.
 // The string must match the name of the initialization function.
@@ -26,7 +26,7 @@ public class Entry
 
         // Used for applying patches (i.e. modifying game code).
         // The parameter can be anything, as long as it doesn't conflict with someone else's.
-        var harmony = new Harmony("sts2.reme.Junkyard");
+        var harmony = new Harmony("sts2.reme.Forge");
         harmony.PatchAll();
 
         // Allows .tscn files to load custom scripts.

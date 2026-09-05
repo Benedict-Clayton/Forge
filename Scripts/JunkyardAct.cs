@@ -7,11 +7,11 @@ using MegaCrit.Sts2.Core.Models.Encounters;
 using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.Unlocks;
 
-namespace Junkyard;
+namespace Forge;
 
-public sealed class JunkyardAct : CustomActModel
+public sealed class ForgeAct : CustomActModel
 {
-    public JunkyardAct() : base(actNumber: 1) { }
+    public ForgeAct() : base(actNumber: 1) { }
 
     public override IEnumerable<EncounterModel> GenerateAllEncounters() =>
     [
@@ -40,8 +40,8 @@ public sealed class JunkyardAct : CustomActModel
 
     public override bool IsUnlocked(UnlockState unlockState) => true;
 
-    public override bool Equals(object? obj) => obj is JunkyardAct;
-    public override int GetHashCode() => typeof(JunkyardAct).GetHashCode();
+    public override bool Equals(object? obj) => obj is ForgeAct;
+    public override int GetHashCode() => typeof(ForgeAct).GetHashCode();
 
     public override IEnumerable<AncientEventModel> AllAncients
     {

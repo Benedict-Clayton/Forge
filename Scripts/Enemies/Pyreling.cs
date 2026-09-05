@@ -23,7 +23,7 @@ using MegaCrit.Sts2.Core.Nodes;
 using MegaCrit.Sts2.Core.Nodes.Vfx.Utilities;
 using MegaCrit.Sts2.Core.Random;
 
-namespace Junkyard;
+namespace Forge;
 
 public sealed class Pyreling : CustomMonsterModel
 {

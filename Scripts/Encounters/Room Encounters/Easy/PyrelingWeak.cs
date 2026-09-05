@@ -3,7 +3,7 @@ using MegaCrit.Sts2.Core.Entities.Encounters;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Rooms;
 
-namespace Junkyard;
+namespace Forge;
 
 public sealed class PyrelingWeak : CustomEncounterModel
 {
@@ -11,7 +11,7 @@ public sealed class PyrelingWeak : CustomEncounterModel
     {
     }
 
-    public override bool IsValidForAct(ActModel act) => act is JunkyardAct;
+    public override bool IsValidForAct(ActModel act) => act is ForgeAct;
 
     private static readonly string[] SlotNames = ["first", "second", "third"];
 
@@ -19,7 +19,7 @@ public sealed class PyrelingWeak : CustomEncounterModel
 
     public override bool IsWeak => true;
 
-    // public override string? CustomScenePath => "res://Junkyard/scenes/encounters/junkyard-pyreling_weak.tscn";
+    // public override string? CustomScenePath => "res://Forge/scenes/encounters/Forge-pyreling_weak.tscn";
 
     private static MonsterModel[] Pyreling => new MonsterModel[]
     {
