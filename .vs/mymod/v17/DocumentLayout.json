@@ -1,0 +1,143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Benedict\\Documents\\mymod\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Benedict\\Documents\\mymod\\Scripts\\Encounters\\Room Encounters\\Easy\\PyrelingWeak.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Encounters\\Room Encounters\\Easy\\PyrelingWeak.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Benedict\\Documents\\mymod\\Scripts\\Enemies\\Pyreling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Enemies\\Pyreling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Benedict\\Documents\\mymod\\Junkyard.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Junkyard.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Benedict\\Documents\\mymod\\Scripts\\Entry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\Entry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Benedict\\Documents\\mymod\\Junkyard.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Junkyard.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Benedict\\Documents\\mymod\\export_presets.cfg||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:export_presets.cfg||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Benedict\\Documents\\mymod\\Scripts\\JunkyardAct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scripts\\JunkyardAct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "export_presets.cfg",
+              "DocumentMoniker": "C:\\Users\\Benedict\\Documents\\mymod\\export_presets.cfg",
+              "RelativeDocumentMoniker": "export_presets.cfg",
+              "ToolTip": "C:\\Users\\Benedict\\Documents\\mymod\\export_presets.cfg",
+              "RelativeToolTip": "export_presets.cfg",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-09-05T10:54:38.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Junkyard.json",
+              "DocumentMoniker": "C:\\Users\\Benedict\\Documents\\mymod\\Junkyard.json",
+              "RelativeDocumentMoniker": "Junkyard.json",
+              "ToolTip": "C:\\Users\\Benedict\\Documents\\mymod\\Junkyard.json",
+              "RelativeToolTip": "Junkyard.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-09-05T10:19:04.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Entry.cs",
+              "DocumentMoniker": "C:\\Users\\Benedict\\Documents\\mymod\\Scripts\\Entry.cs",
+              "RelativeDocumentMoniker": "Scripts\\Entry.cs",
+              "ToolTip": "C:\\Users\\Benedict\\Documents\\mymod\\Scripts\\Entry.cs",
+              "RelativeToolTip": "Scripts\\Entry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T06:39:58.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Junkyard.csproj",
+              "DocumentMoniker": "C:\\Users\\Benedict\\Documents\\mymod\\Junkyard.csproj",
+              "RelativeDocumentMoniker": "Junkyard.csproj",
+              "ToolTip": "C:\\Users\\Benedict\\Documents\\mymod\\Junkyard.csproj",
+              "RelativeToolTip": "Junkyard.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-09-01T06:37:25.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PyrelingWeak.cs",
+              "DocumentMoniker": "C:\\Users\\Benedict\\Documents\\mymod\\Scripts\\Encounters\\Room Encounters\\Easy\\PyrelingWeak.cs",
+              "RelativeDocumentMoniker": "Scripts\\Encounters\\Room Encounters\\Easy\\PyrelingWeak.cs",
+              "ToolTip": "C:\\Users\\Benedict\\Documents\\mymod\\Scripts\\Encounters\\Room Encounters\\Easy\\PyrelingWeak.cs",
+              "RelativeToolTip": "Scripts\\Encounters\\Room Encounters\\Easy\\PyrelingWeak.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAC8AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-04T11:09:42.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Pyreling.cs",
+              "DocumentMoniker": "C:\\Users\\Benedict\\Documents\\mymod\\Scripts\\Enemies\\Pyreling.cs",
+              "RelativeDocumentMoniker": "Scripts\\Enemies\\Pyreling.cs",
+              "ToolTip": "C:\\Users\\Benedict\\Documents\\mymod\\Scripts\\Enemies\\Pyreling.cs",
+              "RelativeToolTip": "Scripts\\Enemies\\Pyreling.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-04T07:32:50.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "JunkyardAct.cs",
+              "DocumentMoniker": "C:\\Users\\Benedict\\Documents\\mymod\\Scripts\\JunkyardAct.cs",
+              "RelativeDocumentMoniker": "Scripts\\JunkyardAct.cs",
+              "ToolTip": "C:\\Users\\Benedict\\Documents\\mymod\\Scripts\\JunkyardAct.cs",
+              "RelativeToolTip": "Scripts\\JunkyardAct.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEgAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-01T07:38:07.736Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

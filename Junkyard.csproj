@@ -1,0 +1,115 @@
+<Project Sdk="Godot.NET.Sdk/4.5.1">
+
+	<PropertyGroup>
+		<OutputType>Library</OutputType>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>true</ImplicitUsings>
+		<LangVersion>13.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+		<Sts2Dir>C:\Program Files (x86)\Steam\steamapps\common\Slay the Spire 2</Sts2Dir>
+		<Sts2DataDir>$(Sts2Dir)\data_sts2_windows_x86_64</Sts2DataDir>
+
+		<GodotPath>C:\Godot\Godot_v4.5.1-stable_mono_win64.exe</GodotPath>
+		<ModsPath>$(Sts2Dir)\mods\</ModsPath>
+
+		<Publicize>true</Publicize>
+		<NoWarn>$(NoWarn);MSB3270</NoWarn>
+
+		<AppOutputBase>$(MSBuildProjectDirectory)\</AppOutputBase>
+		<PathMap>$(AppOutputBase)=.\</PathMap>
+		<GodotDisabledSourceGenerators>GodotPluginsInitializer</GodotDisabledSourceGenerators>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="sts2">
+			<HintPath>$(Sts2DataDir)\sts2.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+
+		<Reference Include="0Harmony">
+			<HintPath>$(Sts2DataDir)\0Harmony.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+
+		<Reference Include="BaseLib">
+			<HintPath>C:\Program Files (x86)\Steam\steamapps\workshop\content\2868840\3737335127\BaseLib\BaseLib.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup Condition="$(Publicize)">
+		<PackageReference Include="Krafs.Publicizer"
+						  Version="2.3.0"
+						  PrivateAssets="All" />
+
+		<Publicize Include="sts2"
+				   IncludeVirtualMembers="false"
+				   IncludeCompilerGeneratedMembers="false" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Alchyr.Sts2.BaseLib"
+						  Version="*"
+						  PrivateAssets="All" />
+
+		<PackageReference Include="Alchyr.Sts2.ModAnalyzers"
+						  Version="*" />
+	</ItemGroup>
+
+	<Target Name="CheckDependencyPaths">
+		<Error
+			Text="Slay the Spire 2 data not found at '$(Sts2DataDir)'"
+			Condition="!Exists('$(Sts2DataDir)')" />
+	</Target>
+
+	<Target Name="CopyToModsFolderOnBuild"
+			AfterTargets="PostBuildEvent">
+
+		<Message
+			Text="Copying mod to Slay the Spire 2 mods folder..."
+			Importance="high" />
+
+		<MakeDir
+			Directories="$(ModsPath)$(MSBuildProjectName)\" />
+
+		<Copy
+			SourceFiles="$(TargetPath)"
+			DestinationFolder="$(ModsPath)$(MSBuildProjectName)\" />
+
+		<Copy
+			SourceFiles="$(MSBuildProjectName).json"
+			DestinationFolder="$(ModsPath)$(MSBuildProjectName)\" />
+
+		<Copy
+			SourceFiles="$(TargetDir)$(TargetName).pdb"
+			DestinationFolder="$(ModsPath)$(MSBuildProjectName)\" />
+
+	</Target>
+
+	<Target Name="NeedGodotForPublish"
+			BeforeTargets="Publish">
+
+		<Error
+			Text="Godot 4.5.1 was not found at '$(GodotPath)'"
+			Condition="!Exists('$(GodotPath)')" />
+
+	</Target>
+
+	<Target Name="GodotPublish"
+			AfterTargets="Publish"
+			Condition="Exists('$(GodotPath)') and '$(IsInnerGodotExport)' != 'true'">
+
+		<Message
+			Text="Exporting Junkyard PCK..."
+			Importance="high" />
+
+		<Exec
+			Command="&quot;$(GodotPath)&quot; --headless --export-pack &quot;BasicExport&quot; &quot;$(ModsPath)$(MSBuildProjectName)\$(MSBuildProjectName).pck&quot;"
+			EnvironmentVariables="IsInnerGodotExport=true;MSBUILDDISABLENODEREUSE=1"
+			ContinueOnError="WarnAndContinue" />
+
+	</Target>
+
+</Project>
