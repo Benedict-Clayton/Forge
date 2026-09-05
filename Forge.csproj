@@ -102,7 +102,7 @@
 			Condition="Exists('$(GodotPath)') and '$(IsInnerGodotExport)' != 'true'">
 
 		<Message
-			Text="Exporting Junkyard PCK..."
+			Text="Exporting Forge PCK..."
 			Importance="high" />
 
 		<Exec

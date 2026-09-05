@@ -2,14 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\images",
-    "\\images\\monsters",
-    "\\Scripts\\Encounters",
-    "\\Scripts\\Encounters\\Bosses",
-    "\\Scripts\\Encounters\\Room Encounters",
-    "\\Scripts\\Encounters\\Room Encounters\\Easy",
-    "\\Scripts\\Encounters\\Room Encounters\\Normal",
-    "\\Scripts\\Enemies"
+    "\\images\\monsters"
   ],
-  "SelectedNode": "\\images\\monsters\\Pyreling.import",
+  "SelectedNode": "\\Forge.sln",
   "PreviewInSolutionExplorer": false
 }
