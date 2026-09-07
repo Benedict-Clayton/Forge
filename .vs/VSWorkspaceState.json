@@ -1,8 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\images",
-    "\\images\\monsters"
+    "\\Localization",
+    "\\Localization\\eng",
+    "\\Powers",
+    "\\Scripts",
+    "\\Scripts\\Encounters",
+    "\\Scripts\\Encounters\\Elites",
+    "\\Scripts\\Encounters\\Room Encounters",
+    "\\Scripts\\Encounters\\Room Encounters\\Normal",
+    "\\Scripts\\Enemies"
   ],
   "SelectedNode": "\\Forge.sln",
   "PreviewInSolutionExplorer": false

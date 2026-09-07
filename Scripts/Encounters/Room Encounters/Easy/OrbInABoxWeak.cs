@@ -5,15 +5,15 @@ using MegaCrit.Sts2.Core.Rooms;
 
 namespace Forge;
 
-public sealed class PyrelingWeak : CustomEncounterModel
+public sealed class OrbInABoxWeak : CustomEncounterModel
 {
-    public PyrelingWeak() : base(RoomType.Monster)
+    public OrbInABoxWeak() : base(RoomType.Monster)
     {
     }
 
     public override bool IsValidForAct(ActModel act) => act is ForgeAct;
 
-    private static readonly string[] SlotNames = ["first", "second", "third"];
+    private static readonly string[] SlotNames = ["first", "second"];
 
     public override IEnumerable<EncounterTag> Tags => Array.Empty<EncounterTag>();
 
@@ -23,28 +23,21 @@ public sealed class PyrelingWeak : CustomEncounterModel
 
     private static MonsterModel[] Pyreling => new MonsterModel[]
     {
-        ModelDb.Monster<Pyreling>(),
-        ModelDb.Monster<Pyreling>(),
-        ModelDb.Monster<Pyreling>()
+        ModelDb.Monster<OrbInABox>(),
+        ModelDb.Monster<OrbInABox>()
     };
 
     public override IEnumerable<MonsterModel> AllPossibleMonsters => [ModelDb.Monster<Pyreling>()];
 
     protected override IReadOnlyList<(MonsterModel, string?)> GenerateMonsters()
     {
-        var pyreling0 = (Pyreling)ModelDb.Monster<Pyreling>().ToMutable();
-        var pyreling1 = (Pyreling)ModelDb.Monster<Pyreling>().ToMutable();
-        var pyreling2 = (Pyreling)ModelDb.Monster<Pyreling>().ToMutable();
-
-        pyreling0.BurnFirst = false;
-        pyreling1.BurnFirst = true;
-        pyreling2.BurnFirst = false;
+        var orbInABox0 = (OrbInABox)ModelDb.Monster<OrbInABox>().ToMutable();
+        var orbInABox1 = (OrbInABox)ModelDb.Monster<OrbInABox>().ToMutable();
 
         return new List<(MonsterModel, string?)>
         {
-            (pyreling0, null),
-            (pyreling1, null),
-            (pyreling2, null)
+            (orbInABox0, null),
+            (orbInABox1, null)
         };
     }
 }

@@ -56,7 +56,10 @@
 
 		<PackageReference Include="Alchyr.Sts2.ModAnalyzers"
 						  Version="*" />
+
+		<AdditionalFiles Include="Localization/**/*.json"/>
 	</ItemGroup>
+	
 
 	<Target Name="CheckDependencyPaths">
 		<Error
