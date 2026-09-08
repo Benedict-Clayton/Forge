@@ -45,7 +45,7 @@ public sealed class OrbInABox : CustomMonsterModel
 
     public override NCreatureVisuals CreateCustomVisuals()
     {
-        Texture2D texture = GD.Load<Texture2D>("res://images/monsters/Test.png");
+        Texture2D texture = GD.Load<Texture2D>("res://images/monsters/OrbInABox.png");
 
         return NodeFactory<NCreatureVisuals>.CreateFromResource(texture);
     }

@@ -26,7 +26,7 @@ public class ConditionalBranchState : MonsterState
 
 	public override string GetNextState(Creature owner, Rng rng)
 	{
-		return _selectNextState(owner, rng, owner.Monster.MoveStateMachine);
+		return _selectNextState(owner, rng, owner.Monster!.MoveStateMachine!);
 	}
 
 	public override void RegisterStates(Dictionary<string, MonsterState> monsterStates)

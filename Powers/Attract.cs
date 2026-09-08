@@ -7,6 +7,10 @@ using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
+using MegaCrit.Sts2.Core.Entities.Players;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Forge;
 
@@ -20,19 +24,20 @@ public sealed class Attract : CustomPowerModel
     "Your hand has Retain. At the end of your turn, swap to Repel.",
     "Your hand has Retain. At the end of your turn, swap to Repel.");
 
+    public override bool ShouldFlush(Player player) => player != this.Owner.Player;
+
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side != Owner.Side)
             return;
 
-        foreach (var card in Owner.Player.PlayerCombatState.AllCards)
+        foreach (var card in Owner.Player!.PlayerCombatState!.AllCards)
         {
             card.GiveSingleTurnRetain();
-            await CardCmd.Afflict<Retain>(card, 1m);
         }
 
         Flash();
-        await PowerCmd.Apply<Repel>(new ThrowingPlayerChoiceContext(), Creature, 1, Creature, null);
+        await PowerCmd.Apply<Repel>((PlayerChoiceContext)new ThrowingPlayerChoiceContext(), this.Owner, 1, this.Owner, null);
         await PowerCmd.Remove(this);
     }
 }

@@ -21,7 +21,7 @@ public sealed class ForgeAct : CustomActModel
 
         ModelDb.Encounter<PyrelingNormal>(),
 
-        ModelDb.Encounter<LivingLodeStoneElite>(),
+        ModelDb.Encounter<LivingLodestoneElite>(),
         
         ModelDb.Encounter<KnowledgeDemonBoss>(),
         ModelDb.Encounter<TheInsatiableBoss>(),

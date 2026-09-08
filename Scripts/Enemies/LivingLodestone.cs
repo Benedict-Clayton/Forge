@@ -32,16 +32,16 @@ public sealed class LivingLodestone : CustomMonsterModel
     public const string ROTATE = "ROTATE";
     public const string REPEL = "REPEL";
 
-    public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 85, 80);
-    public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 85, 80);
+    public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 165, 155);
+    public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 165, 155);
 
-    private int AttractionDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 12, 10);
+    private int AttractionDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 13, 11);
     private const int AttractionHits = 2;
 
-    private int RotateBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 13, 11);
+    private int RotateBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 21, 19);
 
-    private int RepelDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 13, 12);
-    private int RepelBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 12, 10);
+    private int RepelDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 17, 15);
+    private int RepelBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 16, 14);
 
 
     public override NCreatureVisuals CreateCustomVisuals()
@@ -76,7 +76,7 @@ public sealed class LivingLodestone : CustomMonsterModel
         var repelState = new MoveState(
             REPEL,
             RepelMove,
-            new AbstractIntent[] { new SingleAttackIntent(RiposteDamage), new DefendIntent() }
+            new AbstractIntent[] { new SingleAttackIntent(RepelDamage), new DefendIntent() }
         );
 
         var attractionState = new MoveState(
@@ -86,27 +86,30 @@ public sealed class LivingLodestone : CustomMonsterModel
         );
 
         // Normal move cycle
-        magnetizeState.FollowUpState = rotateState;
-        rotateState.FollowUpState = repelState;
+        magnetizeState.FollowUpState = repelState;
         repelState.FollowUpState = attractionState;
         attractionState.FollowUpState = rotateState;
+        rotateState.FollowUpState = repelState;
 
         states.Add(magnetizeState);
         states.Add(rotateState);
         states.Add(repelState);
         states.Add(attractionState);
 
-        return new MonsterMoveStateMachine(states, danceState);
+        return new MonsterMoveStateMachine(states, magnetizeState);
     }
 
     private async Task MagnetizeMove(IReadOnlyList<Creature> targets)
     {
-        await PowerCmd.Apply<Attract>(new ThrowingPlayerChoiceContext(), target, 1m, Creature, null);
+        foreach (Creature target in (IEnumerable<Creature>)targets)
+        {
+            await PowerCmd.Apply<Attract>((PlayerChoiceContext)new ThrowingPlayerChoiceContext(), target, 1, this.Creature, null);
+        }
     }
 
     private async Task RotateMove(IReadOnlyList<Creature> targets)
     {
-        await CreatureCmd.GainBlock(Creature, RotateBlock, ValueProp.Move, null);
+        await CreatureCmd.GainBlock(this.Creature, RotateBlock, ValueProp.Move, null);
     }
 
     private async Task RepelMove(IReadOnlyList<Creature> targets)
