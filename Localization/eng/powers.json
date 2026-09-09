@@ -1,7 +1,0 @@
-{
-    "FORGE-STAGGER": {
-        "title": "Stagger",
-        "description": "When this reaches 40, Stun the enemy.",
-        "smartDescription": "When this reaches 40, Stun the enemy."
-    }
-}

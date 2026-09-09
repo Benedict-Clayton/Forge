@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Localization",
-    "\\Localization\\eng",
+    "\\Forge",
+    "\\Forge\\localization",
+    "\\Forge\\localization\\eng",
     "\\Powers",
     "\\Scripts",
     "\\Scripts\\Encounters",
-    "\\Scripts\\Encounters\\Elites",
     "\\Scripts\\Encounters\\Room Encounters",
     "\\Scripts\\Encounters\\Room Encounters\\Normal",
     "\\Scripts\\Enemies"
   ],
-  "SelectedNode": "\\Forge.sln",
+  "SelectedNode": "\\Scripts\\Enemies\\OrbInABox.cs",
   "PreviewInSolutionExplorer": false
 }

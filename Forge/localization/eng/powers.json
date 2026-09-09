@@ -1,0 +1,5 @@
+{
+    "FORGE-STAGGER.title": "Stagger",
+    "FORGE-STAGGER.description": "The first time this enemy takes a certain amount of damage this fight, this enemy becomes stunned.",
+    "FORGE-STAGGER.smartDescription": "After taking {Amount} damage, become stunned."
+}

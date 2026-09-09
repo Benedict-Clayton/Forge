@@ -57,7 +57,7 @@
 		<PackageReference Include="Alchyr.Sts2.ModAnalyzers"
 						  Version="*" />
 
-		<AdditionalFiles Include="Localization/**/*.json"/>
+		<AdditionalFiles Include="Forge/localization/**/*.json"/>
 	</ItemGroup>
 	
 

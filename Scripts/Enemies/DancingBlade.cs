@@ -46,8 +46,8 @@ public sealed class DancingBlade : CustomMonsterModel
     private int CutDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 6, 5);
     private const int CutHits = 2;
 
-    private int ExecuteDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 12, 10);
-    private const int ExecuteHits = 2;
+    private int ExecuteDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 5, 4);
+    private const int ExecuteHits = 4;
 
     private const int StaggerAmount = 40;
 

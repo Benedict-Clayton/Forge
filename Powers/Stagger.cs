@@ -16,11 +16,6 @@ public sealed class Stagger : CustomPowerModel
     public override PowerStackType StackType => PowerStackType.Counter;
     public override bool ShouldScaleInMultiplayer => true;
 
-    public override List<(string, string)> Localization => new PowerLoc(
-    "Stagger",
-    "The first time this enemy takes a certain amount of damage this fight, this enemy becomes stunned.",
-    "After taking {Amount} damage, become stunned.");
-
     public override async Task AfterDamageReceived(
         PlayerChoiceContext choiceContext,
         Creature target,

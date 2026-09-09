@@ -1,0 +1,23 @@
+{
+    "FORGE-PYRELING.name": "Pyreling",
+    "FORGE-PYRELING.moves.BURN.title": "Burn",
+    "FORGE-PYRELING.moves.GLOWER.title": "Glower",
+
+    "FORGE-DANCING_BLADE.name": "Dancing Blade",
+    "FORGE-DANCING_BLADE.moves.SWORD_DANCE.title": "Swords Dance",
+    "FORGE-DANCING_BLADE.moves.RIPOSTE.title": "Riposte",
+    "FORGE-DANCING_BLADE.moves.CUT.title": "Cut",
+    "FORGE-DANCING_BLADE.moves.EXECUTE.title": "Finisher",
+    "FORGE-DANCING_BLADE.moves.STUNNED.title": "Stunned",
+
+    "FORGE-ORB_IN_A_BOX.name": "Orb-In-A-Box",
+    "FORGE-ORB_IN_A_BOX.moves.CRANK.title": "Crank",
+    "FORGE-ORB_IN_A_BOX.moves.SURPRISE.title": "Surprise",
+
+
+    "FORGE-LIVING_LODESTONE.name": "Living Lodestone",
+    "FORGE-LIVING_LODESTONE.moves.MAGNETIZE.title": "Swords Dance",
+    "FORGE-LIVING_LODESTONE.moves.ATTRACTION.title": "Riposte",
+    "FORGE-LIVING_LODESTONE.moves.ROTATE.title": "Cut",
+    "FORGE-LIVING_LODESTONEE.moves.EXPULSION.title": "Expulsion"
+}

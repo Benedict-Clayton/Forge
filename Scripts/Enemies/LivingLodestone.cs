@@ -30,7 +30,7 @@ public sealed class LivingLodestone : CustomMonsterModel
     public const string MAGNETIZE = "MAGNETIZE";
     public const string ATTRACTION = "ATTRACTION";
     public const string ROTATE = "ROTATE";
-    public const string REPEL = "REPEL";
+    public const string EXPULSION = "EXPULSION";
 
     public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 165, 155);
     public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 165, 155);
@@ -40,8 +40,8 @@ public sealed class LivingLodestone : CustomMonsterModel
 
     private int RotateBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 21, 19);
 
-    private int RepelDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 17, 15);
-    private int RepelBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 16, 14);
+    private int ExpelDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 17, 15);
+    private int ExpelBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 16, 14);
 
 
     public override NCreatureVisuals CreateCustomVisuals()
@@ -73,10 +73,10 @@ public sealed class LivingLodestone : CustomMonsterModel
             new AbstractIntent[] { new DefendIntent() }
         );
 
-        var repelState = new MoveState(
-            REPEL,
-            RepelMove,
-            new AbstractIntent[] { new SingleAttackIntent(RepelDamage), new DefendIntent() }
+        var expelState = new MoveState(
+            EXPULSION,
+            ExpelMove,
+            new AbstractIntent[] { new SingleAttackIntent(ExpelDamage), new DefendIntent() }
         );
 
         var attractionState = new MoveState(
@@ -86,14 +86,14 @@ public sealed class LivingLodestone : CustomMonsterModel
         );
 
         // Normal move cycle
-        magnetizeState.FollowUpState = repelState;
-        repelState.FollowUpState = attractionState;
+        magnetizeState.FollowUpState = expelState;
+        expelState.FollowUpState = attractionState;
         attractionState.FollowUpState = rotateState;
-        rotateState.FollowUpState = repelState;
+        rotateState.FollowUpState = expelState;
 
         states.Add(magnetizeState);
         states.Add(rotateState);
-        states.Add(repelState);
+        states.Add(expelState);
         states.Add(attractionState);
 
         return new MonsterMoveStateMachine(states, magnetizeState);
@@ -112,13 +112,13 @@ public sealed class LivingLodestone : CustomMonsterModel
         await CreatureCmd.GainBlock(this.Creature, RotateBlock, ValueProp.Move, null);
     }
 
-    private async Task RepelMove(IReadOnlyList<Creature> targets)
+    private async Task ExpelMove(IReadOnlyList<Creature> targets)
     {
-        await DamageCmd.Attack(RepelDamage)
+        await DamageCmd.Attack(ExpelDamage)
             .FromMonster(this)
             .Execute(null);
 
-        await CreatureCmd.GainBlock(Creature, RepelBlock, ValueProp.Move, null);
+        await CreatureCmd.GainBlock(Creature, ExpelBlock, ValueProp.Move, null);
     }
 
     private async Task AttractionMove(IReadOnlyList<Creature> targets)

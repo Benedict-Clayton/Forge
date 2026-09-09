@@ -27,7 +27,7 @@ public sealed class OrbInABoxWeak : CustomEncounterModel
         ModelDb.Monster<OrbInABox>()
     };
 
-    public override IEnumerable<MonsterModel> AllPossibleMonsters => [ModelDb.Monster<Pyreling>()];
+    public override IEnumerable<MonsterModel> AllPossibleMonsters => [ModelDb.Monster<OrbInABox>()];
 
     protected override IReadOnlyList<(MonsterModel, string?)> GenerateMonsters()
     {
