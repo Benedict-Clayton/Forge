@@ -1,5 +1,9 @@
 {
     "FORGE-STAGGER.title": "Stagger",
     "FORGE-STAGGER.description": "The first time this enemy takes a certain amount of damage this fight, this enemy becomes stunned.",
-    "FORGE-STAGGER.smartDescription": "After taking {Amount} damage, become stunned."
+    "FORGE-STAGGER.smartDescription": "After taking {Amount} damage, become stunned.",
+
+    "FORGE-SIMPLIFY.title": "Simplify",
+    "FORGE-SIMPLIFY.description": "The costs of your cards are set to X until the end of your turn.",
+    "FORGE-SIMPLIFY.smartDescription": "The costs of your cards are {Amount} until the end of your turn."
 }

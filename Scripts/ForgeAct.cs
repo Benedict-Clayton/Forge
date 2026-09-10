@@ -20,6 +20,7 @@ public sealed class ForgeAct : CustomActModel
         ModelDb.Encounter<DancingBladeWeak>(),
 
         ModelDb.Encounter<PyrelingNormal>(),
+        ModelDb.Encounter<SnekorbNormal>(),
 
         ModelDb.Encounter<LivingLodestoneElite>(),
         
