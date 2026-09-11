@@ -24,7 +24,8 @@ public sealed class Stagger : CustomPowerModel
         Creature? dealer,
         CardModel? cardSource)
     {
-        if (target != Owner || result.UnblockedDamage <= 0 || !props.HasFlag(ValueProp.Move) || props.HasFlag(ValueProp.Unpowered))
+        if (target != Owner || result.UnblockedDamage <= 0)
+            // !props.HasFlag(ValueProp.Move) || props.HasFlag(ValueProp.Unpowered)
             return;
         Flash();
 

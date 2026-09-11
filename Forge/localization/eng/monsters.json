@@ -15,11 +15,13 @@
     "FORGE-ORB_IN_A_BOX.moves.SURPRISE.title": "Surprise",
 
     "FORGE-SNECKORB.name": "Sneckorb",
-
+    "FORGE-SNECKORB.moves.SLAM.title": "Slam",
+    "FORGE-SNECKORB.moves.SIMPLIFY.title": "Simplifying Gaze",
+    "FORGE-SNECKORB.moves.LASER.title": "Laser",
 
     "FORGE-LIVING_LODESTONE.name": "Living Lodestone",
-    "FORGE-LIVING_LODESTONE.moves.MAGNETIZE.title": "Swords Dance",
-    "FORGE-LIVING_LODESTONE.moves.ATTRACTION.title": "Riposte",
-    "FORGE-LIVING_LODESTONE.moves.ROTATE.title": "Cut",
+    "FORGE-LIVING_LODESTONE.moves.MAGNETIZE.title": "Magnetize",
+    "FORGE-LIVING_LODESTONE.moves.ATTRACTION.title": "Fatal Attraction",
+    "FORGE-LIVING_LODESTONE.moves.ROTATE.title": "Rotate",
     "FORGE-LIVING_LODESTONEE.moves.EXPULSION.title": "Expulsion"
 }

@@ -37,7 +37,7 @@ public sealed class Sneckorb : CustomMonsterModel
 	private int SlamDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 17, 15);
 
 	private int SimplifyDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 10, 8);
-	private int NormalizeAmount = 1;
+	// private int NormalizeAmount = 1;
 	private int currentNormalizeAmount = 0;
 
 	private int LaserDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 11, 10);

@@ -19,11 +19,6 @@ public sealed class Attract : CustomPowerModel
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Single;
 
-    public override List<(string, string)> Localization => new PowerLoc(
-    "Attract",
-    "Your hand has Retain. At the end of your turn, swap to Repel.",
-    "Your hand has Retain. At the end of your turn, swap to Repel.");
-
     public override bool ShouldFlush(Player player) => player != this.Owner.Player;
 
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)

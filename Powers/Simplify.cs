@@ -19,10 +19,15 @@ public sealed class Simplify : CustomPowerModel
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Counter;
 
-    public override Task AfterCardDrawn(
-    PlayerChoiceContext choiceContext,
-    CardModel card,
-    bool fromHandDraw)
+    public override async Task AfterApplied(Creature? applier, CardModel? cardSource)
+    {
+        foreach (CardModel card in this.Owner.Player!.PlayerCombatState!.AllCards)
+        {
+            await CardCmd.Afflict<Simplified>(card, Amount);
+        }
+    }
+
+    public override Task AfterCardEnteredCombat(CardModel card)
     {
         if (card.Owner != this.Owner.Player || card.EnergyCost.Canonical < 0)
             return Task.CompletedTask;
@@ -31,15 +36,38 @@ public sealed class Simplify : CustomPowerModel
         return Task.CompletedTask;
     }
 
+    public override Task AfterRemoved(Creature oldOwner)
+    {
+        foreach (CardModel card in oldOwner.Player!.PlayerCombatState!.AllCards.Where<CardModel>((Func<CardModel, bool>)(c => c.Affliction is Simplified)))
+            CardCmd.ClearAffliction(card);
+        return Task.CompletedTask;
+    }
+
+    public override bool TryModifyEnergyCostInCombat(
+      CardModel card,
+      Decimal originalCost,
+      out Decimal modifiedCost)
+    {
+        if (!(card.Affliction is Simplified) || card.Owner != this.Owner.Player)
+        {
+            modifiedCost = originalCost;
+            return false;
+        }
+        modifiedCost = (Decimal)this.Amount;
+        return true;
+    }
+
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side != Owner.Side)
             return;
 
+        /*
         foreach (CardModel card in this.Owner.Player!.PlayerCombatState!.AllCards)
         {
             card.EnergyCost.SetThisCombat(card._energyCost._base);
         }
+        */
 
         await PowerCmd.Remove(this);
     }

@@ -20,11 +20,6 @@ public sealed class Repel : CustomPowerModel
     public override PowerType Type => PowerType.Debuff;
     public override PowerStackType StackType => PowerStackType.Single;
 
-    public override List<(string, string)> Localization => new PowerLoc(
-    "Repel",
-    "Your hand has Ethereal. At the end of your turn, swap to Attract.",
-    "Your hand has Ethereal. At the end of your turn, swap to Attract.");
-
     public override async Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
     {
         if (side != Owner.Side)
