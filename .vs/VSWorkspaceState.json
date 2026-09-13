@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Forge",
-    "\\Forge\\localization",
-    "\\Forge\\localization\\eng",
+    "\\Afflictions",
     "\\Powers",
     "\\Scripts",
     "\\Scripts\\Encounters",
+    "\\Scripts\\Encounters\\Bosses",
+    "\\Scripts\\Encounters\\Elites",
     "\\Scripts\\Encounters\\Room Encounters",
-    "\\Scripts\\Encounters\\Room Encounters\\Normal",
-    "\\Scripts\\Enemies"
+    "\\Scripts\\Encounters\\Room Encounters\\Easy",
+    "\\Scripts\\Encounters\\Room Encounters\\Normal"
   ],
-  "SelectedNode": "\\Scripts\\Enemies\\OrbInABox.cs",
+  "SelectedNode": "\\Scripts\\Encounters\\Bosses\\OverseerBoss.cs",
   "PreviewInSolutionExplorer": false
 }

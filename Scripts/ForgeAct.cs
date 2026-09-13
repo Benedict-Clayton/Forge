@@ -16,14 +16,16 @@ public sealed class ForgeAct : CustomActModel
     public override IEnumerable<EncounterModel> GenerateAllEncounters() =>
     [
         ModelDb.Encounter<PyrelingWeak>(),
-        ModelDb.Encounter<OrbInABoxWeak>(),
-        ModelDb.Encounter<DancingBladeWeak>(),
+        // ModelDb.Encounter<OrbInABoxWeak>(),
+        // ModelDb.Encounter<DancingBladeWeak>(),
 
         ModelDb.Encounter<PyrelingNormal>(),
         ModelDb.Encounter<SnekorbNormal>(),
 
         ModelDb.Encounter<LivingLodestoneElite>(),
-        
+
+        ModelDb.Encounter<OverseerBoss>(),
+
         ModelDb.Encounter<KnowledgeDemonBoss>(),
         ModelDb.Encounter<TheInsatiableBoss>(),
     ];
