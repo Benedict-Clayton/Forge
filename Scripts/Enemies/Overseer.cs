@@ -28,33 +28,28 @@ namespace Forge;
 public sealed class Overseer : CustomMonsterModel
 {
     public const string CALL = "CALL";
-    public const string SLAM = "SLAM";
-    public const string SIMPLIFY = "SIMPLIFY";
-    public const string LASER = "LASER";
+    public const string FOCUS = "FOCUS";
+    public const string EVOKE = "EVOKE";
+    public const string REINFORCE = "REINFORCE";
+    public const string HOTFIX = "HOTFIX";
 
-    public override int MinInitialHp =>
-        AscensionHelper.GetValueIfAscension(
-            AscensionLevel.ToughEnemies, 115, 110);
+    private string? previousMove;
 
-    public override int MaxInitialHp =>
-        AscensionHelper.GetValueIfAscension(
-            AscensionLevel.ToughEnemies, 115, 110);
+    public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 275, 255);
+    public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 275, 255);
 
-    private int SlamDamage =>
-        AscensionHelper.GetValueIfAscension(
-            AscensionLevel.DeadlyEnemies, 17, 15);
+    private int FocusDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 15, 13);
+    private int FocusVigorAmount = 1;
 
-    private int SimplifyDamage =>
-        AscensionHelper.GetValueIfAscension(
-            AscensionLevel.DeadlyEnemies, 10, 8);
+    private int EvokeDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 8, 7);
+    private const int EvokeHits = 2;
+    private int EvokeVigorAmount = 1;
 
-    private int currentNormalizeAmount = 0;
+    private int ReinforceBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 10, 8);
+    private int ReinforceVigor => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 4, 3);
 
-    private int LaserDamage =>
-        AscensionHelper.GetValueIfAscension(
-            AscensionLevel.DeadlyEnemies, 11, 10);
+    private int HotfixVigorAmount = 4;
 
-    private const int LaserHits = 2;
     private const int ArtifactAmount = 2;
 
     public override NCreatureVisuals CreateCustomVisuals()
@@ -65,7 +60,6 @@ public sealed class Overseer : CustomMonsterModel
         return NodeFactory<NCreatureVisuals>.CreateFromResource(texture);
     }
 
-    // Put statuses here.
     public override async Task AfterAddedToRoom()
     {
         await base.AfterAddedToRoom();
@@ -85,102 +79,169 @@ public sealed class Overseer : CustomMonsterModel
         var callState = new MoveState(
             CALL,
             CallMove,
-            new AbstractIntent[]
-            {
-                new SummonIntent()
-            }
+            new AbstractIntent[] { new SummonIntent() }
         );
 
-        var slamState = new MoveState(
-            SLAM,
-            SlamMove,
-            new AbstractIntent[]
-            {
-                new SingleAttackIntent(SlamDamage)
-            }
+        var focusState = new MoveState(
+            FOCUS,
+            FocusMove,
+            new AbstractIntent[] { new SingleAttackIntent(FocusDamage), new BuffIntent(), new SummonIntent() }
         );
 
-        var simplifyState = new MoveState(
-            SIMPLIFY,
-            SimplifyMove,
-            new AbstractIntent[]
-            {
-                new SingleAttackIntent(SimplifyDamage),
-                new CardDebuffIntent()
-            }
+        var evokeState = new MoveState(
+            EVOKE,
+            EvokeMove,
+            new AbstractIntent[] { new MultiAttackIntent(EvokeDamage, EvokeHits), new BuffIntent(), new SummonIntent() }
         );
 
-        var laserState = new MoveState(
-            LASER,
-            LaserMove,
-            new AbstractIntent[]
-            {
-                new MultiAttackIntent(LaserDamage, LaserHits)
-            }
+        var reinforceState = new MoveState(
+            REINFORCE,
+            ReinforceMove,
+            new AbstractIntent[] { new DefendIntent(), new BuffIntent(), new SummonIntent() }
         );
 
-        callState.FollowUpState = slamState;
+        var hotfixState = new MoveState(
+            HOTFIX,
+            HotfixMove,
+            new AbstractIntent[] { new BuffIntent() }
+        );
 
-        slamState.FollowUpState = simplifyState;
-        simplifyState.FollowUpState = laserState;
-        laserState.FollowUpState = slamState;
+        var pickState = new ConditionalBranchState(
+            "PICK_MOVE",
+            SelectNextMove
+        );
 
+        callState.FollowUpState = pickState;
+        focusState.FollowUpState = pickState;
+        evokeState.FollowUpState = pickState;
+        reinforceState.FollowUpState = pickState;
+        hotfixState.FollowUpState = pickState;
+
+        states.Add(pickState);
         states.Add(callState);
-        states.Add(slamState);
-        states.Add(simplifyState);
-        states.Add(laserState);
+        states.Add(focusState);
+        states.Add(evokeState);
+        states.Add(reinforceState);
+        states.Add(hotfixState);
 
         return new MonsterMoveStateMachine(states, callState);
     }
 
+    // Helper Method for spawning Servos.
+    private async Task SpawnEnemy<T>() where T : MonsterModel
+    {
+        EncounterModel encounter = this.CombatState.Encounter!;
+
+        if (this.CombatState.Enemies.Count >= encounter.Slots.Count)
+        {
+            return;
+        }
+
+        string? slotName = encounter?.Slots.LastOrDefault(
+            s => this.CombatState.Enemies.All(
+                c => c.SlotName != s));
+
+        if (slotName != null)
+        {
+            await CreatureCmd.Add<T>(
+                this.CombatState,
+                slotName);
+        }
+        await Cmd.Wait(0.3f);
+    }
+
+    private int NumAliveMinions()
+    {
+        return CombatState.GetTeammatesOf(Creature)
+            .Count(t => t != Creature && t.IsAlive);
+    }
+
+    private string SelectNextMove(
+    Creature owner,
+    Rng rng,
+    MonsterMoveStateMachine stateMachine)
+    {
+        int numMinions = NumAliveMinions();
+
+        string nextMove;
+
+        switch (numMinions)
+        {
+            case 4:
+                nextMove = previousMove == HOTFIX ? FOCUS : HOTFIX;
+                break;
+
+            case 3:
+                nextMove = previousMove == FOCUS ? HOTFIX : FOCUS;
+                break;
+
+            case 2:
+                nextMove = previousMove == EVOKE ? REINFORCE : EVOKE;
+                break;
+
+            case 1:
+                nextMove = previousMove == REINFORCE ? EVOKE : REINFORCE;
+                break;
+
+            default:
+                nextMove = CALL;
+                break;
+        }
+
+        previousMove = nextMove;
+        return nextMove;
+    }
+
+
     public async Task CallMove(IReadOnlyList<Creature> targets)
     {
-        // SfxCmd.Play("event:/sfx/enemy/enemy_attacks/egg_layer/egg_layer_lay");
-        // await CreatureCmd.TriggerAnim(this.Creature, "layTrigger", 1f);
-
         for (int i = 0; i < 4; ++i)
         {
-            EncounterModel encounter = this.CombatState.Encounter;
-
-            string? slotName = encounter?.Slots.LastOrDefault(
-                s => this.CombatState.Enemies.All(
-                    c => c.SlotName != s));
-
-            if (slotName != null)
-            {
-                await CreatureCmd.Add<ServoA>(this.CombatState, slotName);
-            }
+            await SpawnEnemy<ServoA>();
         }
     }
 
-    private async Task SlamMove(IReadOnlyList<Creature> targets)
+    private async Task FocusMove(IReadOnlyList<Creature> targets)
     {
-        await DamageCmd.Attack(SlamDamage)
+        await DamageCmd.Attack(FocusDamage)
             .FromMonster(this)
             .Execute(null!);
+
+        await PowerCmd.Apply<VigorPower>((PlayerChoiceContext)new ThrowingPlayerChoiceContext(),
+            (IEnumerable<Creature>)this.CombatState.GetTeammatesOf(this.Creature), FocusVigorAmount, this.Creature, (CardModel)null!);
+
+        for (int i = 0; i < 1; ++i)
+        {
+            await SpawnEnemy<ServoA>();
+        }
     }
 
-    private async Task SimplifyMove(IReadOnlyList<Creature> targets)
+    private async Task EvokeMove(IReadOnlyList<Creature> targets)
     {
-        currentNormalizeAmount++;
-
-        await DamageCmd.Attack(SimplifyDamage)
+        await DamageCmd.Attack(EvokeDamage)
             .FromMonster(this)
             .Execute(null!);
 
-        await PowerCmd.Apply<Simplify>(
-            new ThrowingPlayerChoiceContext(),
-            targets,
-            currentNormalizeAmount,
-            this.Creature,
-            null!);
+        await PowerCmd.Apply<VigorPower>((PlayerChoiceContext)new ThrowingPlayerChoiceContext(),
+            (IEnumerable<Creature>)this.CombatState.GetTeammatesOf(this.Creature), EvokeVigorAmount, this.Creature, (CardModel)null!);
+
+        for (int i = 0; i < 2; ++i)
+        {
+            await SpawnEnemy<ServoA>();
+        }
     }
 
-    private async Task LaserMove(IReadOnlyList<Creature> targets)
+    private async Task ReinforceMove(IReadOnlyList<Creature> targets)
     {
-        await DamageCmd.Attack(LaserDamage)
-            .WithHitCount(LaserHits)
-            .FromMonster(this)
-            .Execute(null!);
+        for (int i = 0; i < 3; ++i)
+        {
+            await SpawnEnemy<ServoA>();
+        }
+    }
+
+    private async Task HotfixMove(IReadOnlyList<Creature> targets)
+    {
+        await PowerCmd.Apply<VigorPower>((PlayerChoiceContext)new ThrowingPlayerChoiceContext(), 
+            (IEnumerable<Creature>)this.CombatState.GetTeammatesOf(this.Creature), HotfixVigorAmount, this.Creature, (CardModel)null!);
     }
 }

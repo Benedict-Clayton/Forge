@@ -17,8 +17,6 @@ public sealed class OverseerBoss : CustomEncounterModel
 
     public override bool IsValidForAct(ActModel act) => act is ForgeAct;
 
-    // public override bool HasScene => true;
-
     public override IReadOnlyList<string> Slots
     {
         get
@@ -33,8 +31,6 @@ public sealed class OverseerBoss : CustomEncounterModel
             };
         }
     }
-
-    public override bool IsWeak => true;
 
     public override IEnumerable<EncounterTag> Tags => Array.Empty<EncounterTag>();
 

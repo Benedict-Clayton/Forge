@@ -33,8 +33,8 @@ public sealed class ServoA : CustomMonsterModel
     public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 15, 14);
     public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 16, 15);
 
-    private int FlutterDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 1, 1);
-    private int FlutterHits => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 4, 3);
+    private int FlutterDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 2, 3);
+    private int FlutterHits => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 2, 2);
     private int DebuffAmount => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 1, 1);
 
 
@@ -78,7 +78,7 @@ public sealed class ServoA : CustomMonsterModel
 
     private async Task BootMove(IReadOnlyList<Creature> targets)
     {
-        await Cmd.Wait(0.5f);
+        await Cmd.Wait(0.3f);
         return;
     }
 

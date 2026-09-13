@@ -23,5 +23,12 @@
     "FORGE-LIVING_LODESTONE.moves.MAGNETIZE.title": "Magnetize",
     "FORGE-LIVING_LODESTONE.moves.ATTRACTION.title": "Fatal Attraction",
     "FORGE-LIVING_LODESTONE.moves.ROTATE.title": "Rotate",
-    "FORGE-LIVING_LODESTONEE.moves.EXPULSION.title": "Expulsion"
+    "FORGE-LIVING_LODESTONEE.moves.EXPULSION.title": "Expulsion",
+
+    "FORGE-OVERSEER.name": "Overseer",
+    "FORGE-OVERSEER.moves.CALL.title": "Call Servo",
+    "FORGE-OVERSEER.moves.FOCUS.title": "Focus",
+    "FORGE-OVERSEER.moves.EVOKE.title": "Evoke",
+    "FORGE-OVERSEER.moves.REINFORCE.title": "Reinforce",
+    "FORGE-OVERSEER.moves.HOTFIX.title": "Hotfix"
 }
