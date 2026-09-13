@@ -138,7 +138,7 @@ public sealed class Overseer : CustomMonsterModel
         // SfxCmd.Play("event:/sfx/enemy/enemy_attacks/egg_layer/egg_layer_lay");
         // await CreatureCmd.TriggerAnim(this.Creature, "layTrigger", 1f);
 
-        for (int i = 0; i < 3; ++i)
+        for (int i = 0; i < 4; ++i)
         {
             EncounterModel encounter = this.CombatState.Encounter;
 
