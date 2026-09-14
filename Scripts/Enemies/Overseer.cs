@@ -45,12 +45,14 @@ public sealed class Overseer : CustomMonsterModel
     private const int EvokeHits = 2;
     private int EvokeVigorAmount = 1;
 
-    private int ReinforceBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 10, 8);
-    private int ReinforceVigor => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 4, 3);
+    private int ReinforceBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 12, 10);
+    private int ReinforceVigorAmount => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 4, 3);
 
     private int HotfixVigorAmount = 4;
 
     private const int ArtifactAmount = 2;
+
+    private int servoSpawnCount = 0;
 
     public override NCreatureVisuals CreateCustomVisuals()
     {
@@ -137,17 +139,52 @@ public sealed class Overseer : CustomMonsterModel
             return;
         }
 
-        string? slotName = encounter?.Slots.LastOrDefault(
+        string? slotName = encounter.Slots.LastOrDefault(
             s => this.CombatState.Enemies.All(
                 c => c.SlotName != s));
 
         if (slotName != null)
         {
-            await CreatureCmd.Add<T>(
+            var summoned = await CreatureCmd.Add<T>(
                 this.CombatState,
                 slotName);
+
+            await PowerCmd.Apply<MinionPower>(
+                new ThrowingPlayerChoiceContext(),
+                summoned,
+                1,
+                Creature,
+                null!);
         }
+
         await Cmd.Wait(0.3f);
+    }
+
+    // Spawns the requested number of ServoAs.
+    // After 8 ServoAs have spawned, pairs can be replaced by ServoBs.
+    private async Task SpawnServos(int amount)
+    {
+        while (amount >= 2)
+        {
+            if (servoSpawnCount >= 6 && GD.Randf() < 0.75f)
+            {
+                await SpawnEnemy<ServoB>();
+                servoSpawnCount += 2;
+                amount -= 2;
+            }
+            else
+            {
+                await SpawnEnemy<ServoA>();
+                servoSpawnCount++;
+                amount--;
+            }
+        }
+
+        if (amount == 1)
+        {
+            await SpawnEnemy<ServoA>();
+            servoSpawnCount++;
+        }
     }
 
     private int NumAliveMinions()
@@ -195,10 +232,7 @@ public sealed class Overseer : CustomMonsterModel
 
     public async Task CallMove(IReadOnlyList<Creature> targets)
     {
-        for (int i = 0; i < 4; ++i)
-        {
-            await SpawnEnemy<ServoA>();
-        }
+        await SpawnServos(4);
     }
 
     private async Task FocusMove(IReadOnlyList<Creature> targets)
@@ -210,33 +244,36 @@ public sealed class Overseer : CustomMonsterModel
         await PowerCmd.Apply<VigorPower>((PlayerChoiceContext)new ThrowingPlayerChoiceContext(),
             (IEnumerable<Creature>)this.CombatState.GetTeammatesOf(this.Creature), FocusVigorAmount, this.Creature, (CardModel)null!);
 
-        for (int i = 0; i < 1; ++i)
-        {
-            await SpawnEnemy<ServoA>();
-        }
+        await SpawnServos(1);
     }
 
     private async Task EvokeMove(IReadOnlyList<Creature> targets)
     {
         await DamageCmd.Attack(EvokeDamage)
             .FromMonster(this)
+            .WithHitCount(EvokeHits)
             .Execute(null!);
 
         await PowerCmd.Apply<VigorPower>((PlayerChoiceContext)new ThrowingPlayerChoiceContext(),
             (IEnumerable<Creature>)this.CombatState.GetTeammatesOf(this.Creature), EvokeVigorAmount, this.Creature, (CardModel)null!);
 
-        for (int i = 0; i < 2; ++i)
-        {
-            await SpawnEnemy<ServoA>();
-        }
+        await SpawnServos(2);
     }
 
     private async Task ReinforceMove(IReadOnlyList<Creature> targets)
     {
-        for (int i = 0; i < 3; ++i)
+        // await CreatureCmd.GainBlock(Creature, ReinforceBlock, ValueProp.Move, null);
+
+        foreach (var teammate in CombatState.GetTeammatesOf(Creature))
         {
-            await SpawnEnemy<ServoA>();
+            await CreatureCmd.GainBlock(teammate, ReinforceBlock, ValueProp.Move, null);
         }
+
+        await PowerCmd.Apply<VigorPower>((PlayerChoiceContext)new ThrowingPlayerChoiceContext(),
+            (IEnumerable<Creature>)this.CombatState.GetTeammatesOf(this.Creature), ReinforceVigorAmount, this.Creature, (CardModel)null!);
+
+        await SpawnServos(3);
+
     }
 
     private async Task HotfixMove(IReadOnlyList<Creature> targets)

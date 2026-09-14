@@ -11,7 +11,7 @@ public sealed class OverseerBoss : CustomEncounterModel
     public const string _overseerSlot = "overseer";
     public const string _servoSlotPrefix = "servo";
 
-    public OverseerBoss() : base(RoomType.Monster)
+    public OverseerBoss() : base(RoomType.Boss)
     {
     }
 
@@ -49,7 +49,8 @@ public sealed class OverseerBoss : CustomEncounterModel
             return new MonsterModel[]
             {
                 ModelDb.Monster<Overseer>(),
-                ModelDb.Monster<ServoA>()
+                ModelDb.Monster<ServoA>(),
+                ModelDb.Monster<ServoB>()
             };
         }
     }

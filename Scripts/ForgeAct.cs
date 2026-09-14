@@ -11,23 +11,22 @@ namespace Forge;
 
 public sealed class ForgeAct : CustomActModel
 {
-    public ForgeAct() : base(actNumber: 1) { }
+    public ForgeAct() : base(actNumber: 2) { }
 
     public override IEnumerable<EncounterModel> GenerateAllEncounters() =>
     [
         ModelDb.Encounter<PyrelingWeak>(),
-        // ModelDb.Encounter<OrbInABoxWeak>(),
-        // ModelDb.Encounter<DancingBladeWeak>(),
+        ModelDb.Encounter<OrbInABoxWeak>(),
+        ModelDb.Encounter<DancingBladeWeak>(),
 
         ModelDb.Encounter<PyrelingNormal>(),
         ModelDb.Encounter<SnekorbNormal>(),
+        ModelDb.Encounter<ChompersNormal>(),
+        ModelDb.Encounter<SwordBoxNormal>(),
 
         ModelDb.Encounter<LivingLodestoneElite>(),
 
-        ModelDb.Encounter<OverseerBoss>(),
-
-        ModelDb.Encounter<KnowledgeDemonBoss>(),
-        ModelDb.Encounter<TheInsatiableBoss>(),
+        ModelDb.Encounter<OverseerBoss>()
     ];
 
     public override IEnumerable<EventModel> AllEvents =>
@@ -52,7 +51,7 @@ public sealed class ForgeAct : CustomActModel
     {
         get
         {
-            return Act1Ancients;
+            return Act2Ancients;
         }
     }
 

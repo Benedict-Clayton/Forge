@@ -1,15 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Afflictions",
-    "\\Powers",
+    "\\Forge",
+    "\\Forge\\localization",
+    "\\Forge\\localization\\eng",
+    "\\images",
+    "\\images\\monsters",
+    "\\Patches\\OverseerPatch",
+    "\\scenes\\encounters",
     "\\Scripts",
-    "\\Scripts\\Encounters",
-    "\\Scripts\\Encounters\\Bosses",
-    "\\Scripts\\Encounters\\Elites",
-    "\\Scripts\\Encounters\\Room Encounters",
-    "\\Scripts\\Encounters\\Room Encounters\\Easy",
-    "\\Scripts\\Encounters\\Room Encounters\\Normal"
+    "\\Scripts\\Enemies"
   ],
   "SelectedNode": "\\Scripts\\Encounters\\Bosses\\OverseerBoss.cs",
   "PreviewInSolutionExplorer": false

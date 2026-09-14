@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc13petfy0ux4"
-path="res://.godot/imported/Fireling.png-d86b07cb3ccfe0cc5b34ec9b6ab8f05c.ctex"
+uid="uid://d3mht6la7m374"
+path="res://.godot/imported/ServoB.png-aec3c1687b9dd7fd32a985dcad0a7d49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="
-/monsters/Fireling.png"
-dest_files=["res://.godot/imported/Fireling.png-d86b07cb3ccfe0cc5b34ec9b6ab8f05c.ctex"]
+source_file="res://images/monsters/ServoB.png"
+dest_files=["res://.godot/imported/ServoB.png-aec3c1687b9dd7fd32a985dcad0a7d49.ctex"]
 
 [params]
 

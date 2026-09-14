@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc13petfy0ux4"
-path="res://.godot/imported/Fireling.png-d86b07cb3ccfe0cc5b34ec9b6ab8f05c.ctex"
+uid="uid://d0gmd5cliuy37"
+path="res://.godot/imported/forge-overseer_boss.png-2e706126a0b56bfa81e6f8529aa900ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="
-/monsters/Fireling.png"
-dest_files=["res://.godot/imported/Fireling.png-d86b07cb3ccfe0cc5b34ec9b6ab8f05c.ctex"]
+source_file="res://images/ui/run_history/forge-overseer_boss.png"
+dest_files=["res://.godot/imported/forge-overseer_boss.png-2e706126a0b56bfa81e6f8529aa900ee.ctex"]
 
 [params]
 

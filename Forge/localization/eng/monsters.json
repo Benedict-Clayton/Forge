@@ -30,5 +30,13 @@
     "FORGE-OVERSEER.moves.FOCUS.title": "Focus",
     "FORGE-OVERSEER.moves.EVOKE.title": "Evoke",
     "FORGE-OVERSEER.moves.REINFORCE.title": "Reinforce",
-    "FORGE-OVERSEER.moves.HOTFIX.title": "Hotfix"
+    "FORGE-OVERSEER.moves.HOTFIX.title": "Hotfix",
+
+    "FORGE-SERVO_A.name": "Servo α",
+    "FORGE-SERVO_A.moves.FLUTTER.title": "Flutter",
+    "FORGE-SERVO_A.moves.SCRAMBLE.title": "Scramble",
+
+    "FORGE-SERVO_B.name": "Servo β",
+    "FORGE-SERVO_B.moves.ROLL.title": "Roll",
+    "FORGE-SERVO_B.moves.STEAM.title": "Steam"
 }

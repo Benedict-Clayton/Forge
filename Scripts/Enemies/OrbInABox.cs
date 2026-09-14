@@ -36,7 +36,7 @@ public sealed class OrbInABox : CustomMonsterModel
 
     private int CrankVigor => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 3, 3);
 
-    private int SurpriseDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 4, 3);
+    private int SurpriseDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 2, 1);
     private const int SurpriseHits = 3;
 
     private int _crankCount = 0;
@@ -110,6 +110,5 @@ public sealed class OrbInABox : CustomMonsterModel
             .WithHitCount(SurpriseHits)
             .FromMonster(this)
             .Execute(null);
-
     }
 }

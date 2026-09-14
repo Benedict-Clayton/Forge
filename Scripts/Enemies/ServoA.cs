@@ -29,18 +29,19 @@ public sealed class ServoA : CustomMonsterModel
 {
     public const string BOOT = "BOOT";
     public const string FLUTTER = "FLUTTER";
+    public const string SCRAMBLE = "SCRAMBLE";
 
     public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 15, 14);
     public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 16, 15);
 
-    private int FlutterDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 2, 3);
+    private int FlutterDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 3, 2);
     private int FlutterHits => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 2, 2);
     private int DebuffAmount => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 1, 1);
 
 
     public override NCreatureVisuals CreateCustomVisuals()
     {
-        Texture2D texture = GD.Load<Texture2D>("res://images/monsters/Servo.png");
+        Texture2D texture = GD.Load<Texture2D>("res://images/monsters/ServoA.png");
 
         return NodeFactory<NCreatureVisuals>.CreateFromResource(texture);
     }
@@ -67,13 +68,25 @@ public sealed class ServoA : CustomMonsterModel
             new AbstractIntent[] { new MultiAttackIntent(FlutterDamage, FlutterHits), new StatusIntent(DebuffAmount) }
         );
 
+        var scrambleState = new MoveState(
+            SCRAMBLE,
+            ScrambleMove,
+            new AbstractIntent[] { new MultiAttackIntent(FlutterDamage, FlutterHits)}
+        );
+
         bootState.FollowUpState = flutterState;
-        flutterState.FollowUpState = flutterState;
+        flutterState.FollowUpState = scrambleState;
+        scrambleState.FollowUpState = flutterState;
 
         states.Add(bootState);
         states.Add(flutterState);
+        states.Add(scrambleState);
 
-        return new MonsterMoveStateMachine(states, bootState);
+        var initialState = Creature.SlotName is "servo1" or "servo3"
+        ? flutterState
+        : scrambleState;
+
+        return new MonsterMoveStateMachine(states, initialState);
     }
 
     private async Task BootMove(IReadOnlyList<Creature> targets)
@@ -90,5 +103,13 @@ public sealed class ServoA : CustomMonsterModel
             .Execute(null);
 
         await CardPileCmd.AddToCombatAndPreview<Dazed>(targets, PileType.Discard, DebuffAmount, null);
+    }
+
+    private async Task ScrambleMove(IReadOnlyList<Creature> targets)
+    {
+        await DamageCmd.Attack(FlutterDamage)
+            .WithHitCount(FlutterHits)
+            .FromMonster(this)
+            .Execute(null);
     }
 }
