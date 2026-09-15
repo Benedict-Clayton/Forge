@@ -46,7 +46,7 @@ public sealed class LivingLodestone : CustomMonsterModel
 
     public override NCreatureVisuals CreateCustomVisuals()
     {
-        Texture2D texture = GD.Load<Texture2D>("res://images/monsters/Test.png");
+        Texture2D texture = GD.Load<Texture2D>("res://images/monsters/LivingLodestone.png");
 
         return NodeFactory<NCreatureVisuals>.CreateFromResource(texture);
     }

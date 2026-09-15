@@ -31,7 +31,9 @@ public sealed class ForgeAct : CustomActModel
 
     public override IEnumerable<EventModel> AllEvents =>
     [
+        // ModelDb.Event<ScrapSlime>(),
         ModelDb.Event<Amalgamator>(),
+
         ModelDb.Event<Bugslayer>(),
         ModelDb.Event<ColorfulPhilosophers>(),
         ModelDb.Event<ColossalFlower>(),
@@ -39,7 +41,7 @@ public sealed class ForgeAct : CustomActModel
         ModelDb.Event<InfestedAutomaton>(),
         ModelDb.Event<LostWisp>(),
         ModelDb.Event<SpiritGrafter>(),
-        ModelDb.Event<TheLanternKey>(),
+        ModelDb.Event<TheLanternKey>()
     ];
 
     public override bool IsUnlocked(UnlockState unlockState) => true;

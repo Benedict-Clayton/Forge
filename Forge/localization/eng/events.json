@@ -1,0 +1,14 @@
+{
+    "FORGE-SCRAP_SLIME.pages.INITIAL.description": "You spot an ooze that has eaten an array of junk. However, something shines within",
+
+    "FORGE-SCRAP_SLIME.pages.INITIAL.options.REACH.description": "Lose [gold]11 HP[/gold]. Obtain a random unidentified [gold]Relic[/gold].",
+    "FORGE-SCRAP_SLIME.pages.INITIAL.options.REACH.title": "Reach In",
+
+    "FORGE-SCRAP_SLIME.pages.INITIAL.options.STUDY.description": "Gain a random uncommon [gold]Potion[/gold].",
+    "FORGE-SCRAP_SLIME.pages.INITIAL.options.STUDY.title": "Study It",
+
+    "FORGE-SCRAP_SLIME.pages.REACH.description": "You reach into the pile of scrap. Something moves beneath your hand...",
+    "FORGE-SCRAP_SLIME.pages.STUDY.description": "You examine the strange creature from a safe distance. Its movements begin to make sense.",
+
+    "FORGE-SCRAP_SLIME.title": "Scrap Slime"
+}
