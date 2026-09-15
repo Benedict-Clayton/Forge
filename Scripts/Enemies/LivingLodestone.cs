@@ -38,9 +38,9 @@ public sealed class LivingLodestone : CustomMonsterModel
     private int AttractionDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 13, 11);
     private const int AttractionHits = 2;
 
-    private int RotateBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 21, 19);
+    private int RotateBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 22, 20);
 
-    private int ExpelDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 17, 15);
+    private int ExpelDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 20, 18);
     private int ExpelBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 16, 14);
 
 
