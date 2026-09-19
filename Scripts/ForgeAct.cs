@@ -34,7 +34,7 @@ public sealed class ForgeAct : CustomActModel
 
     public override IEnumerable<EventModel> AllEvents =>
     [
-        // ModelDb.Event<ScrapSlime>(),
+        ModelDb.Event<ScrapSlime>(),
         ModelDb.Event<Amalgamator>(),
 
         ModelDb.Event<Bugslayer>(),

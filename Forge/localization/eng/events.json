@@ -1,14 +1,26 @@
 {
-    "FORGE-SCRAP_SLIME.pages.INITIAL.description": "You spot an ooze that has eaten an array of junk. However, something shines from within!",
+    "FORGE-SCRAP_SLIME.title": "Scrap Ooze",
 
-    "FORGE-SCRAP_SLIME.pages.INITIAL.options.REACH_IN.description": "Lose [gold]11 HP[/gold]. Obtain a random unidentified [gold]Relic[/gold].",
+    "FORGE-SCRAP_SLIME.pages.INITIAL.description": "You spot an ooze that has eaten an array of junk. However, something shines from within...\n\nShould you reach into the dangerous slime for it?",
+
     "FORGE-SCRAP_SLIME.pages.INITIAL.options.REACH_IN.title": "Reach In",
+    "FORGE-SCRAP_SLIME.pages.INITIAL.options.REACH_IN.description": "[red]Lose 11 HP[/[red]]. Obtain a random [blue]Relic[/blue].",
 
-    "FORGE-SCRAP_SLIME.pages.INITIAL.options.STUDY_IT.description": "Gain a random uncommon [gold]Potion[/gold].",
     "FORGE-SCRAP_SLIME.pages.INITIAL.options.STUDY_IT.title": "Study It",
+    "FORGE-SCRAP_SLIME.pages.INITIAL.options.STUDY_IT.description": "[green]Gain a random uncommon [blue]Potion[/blue].[/green]",
 
-    "FORGE-SCRAP_SLIME.pages.REACH.description": "You reach into the pile of scrap. Something moves beneath your hand...",
-    "FORGE-SCRAP_SLIME.pages.STUDY.description": "You examine the strange creature from a safe distance. Its movements begin to make sense.",
+    "FORGE-SCRAP_SLIME.pages.REACH.description": "[red][jitter]Ouch![/jitter][/red]\n\nAfter rummaging through the metal and burning acid, you finally grab hold of a [gold]relic[/gold] and yank it out.\n\nYou pull your way out of the ooze [red]damaged[/red] but rewarded.",
+    "FORGE-SCRAP_SLIME.pages.STUDY.description": "Examining the Ooze, it eventually leads you towards a compartment with a potion!",
 
-    "FORGE-SCRAP_SLIME.title": "Scrap Slime"
+
+    "FORGE-SPUTTERING_FURNACE.title": "Sputtering Furnace",
+
+    "FORGE-SPUTTERING_FURNACE.pages.INITIAL.description": "You find a furnace sputtering and clinging to heat. The flames brighten as you draw near, beckoning you.",
+    "FORGE-SPUTTERING_FURNACE.pages.INITIAL.options.FEED_IT.title": "Feed It",
+    "FORGE-SPUTTERING_FURNACE.pages.INITIAL.options.FEED_IT.description": "[green]Remove 1 card from your Deck.[/green] [red]Randomly remove another from your Deck.[/red]",
+    "FORGE-SPUTTERING_FURNACE.pages.INITIAL.options.USE_IT.title": "Use It",
+    "FORGE-SPUTTERING_FURNACE.pages.INITIAL.options.USE_IT.description": "[green]Upgrade a random card in your deck.[/green] [red]Lose 3 Max HP.[/red]",
+
+    "FORGE-SPUTTERING_FURNACE.pages.FEED.description": "As you feed it, the flames [red][jitter]ROAR[/jitter][/red] to life!\n\nYou may have overfed it a little...",
+    "FORGE-SPUTTERING_FURNACE.pages.USE.description": "You decide to use the last of its flames to work. The heat is intense, but you manage to make use of it."
 }

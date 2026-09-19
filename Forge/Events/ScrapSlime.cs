@@ -25,13 +25,6 @@ public sealed class ScrapSlime : CustomEventModel
         return runState.Players.All(p => p.Creature.CurrentHp >= 12);
     }
 
-    /*
-    public override ActModel[] Acts => new[]
-    {
-        ModelDb.Act<ForgeAct>()
-    };
-    */
-
     protected override IEnumerable<DynamicVar> CanonicalVars => new[]
     {
         new DamageVar(11M, ValueProp.Unblockable | ValueProp.Unpowered)
