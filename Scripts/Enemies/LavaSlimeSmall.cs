@@ -35,7 +35,7 @@ public sealed class LavaSlimeSmall : CustomMonsterModel
 
     private int AfterBurnAmount => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 3, 2);
 
-    private int SputterDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 5, 5);
+    private int SputterDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 4, 4);
 
     private int WarmupVigor => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 5, 5);
 

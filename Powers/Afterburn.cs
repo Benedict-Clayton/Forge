@@ -39,7 +39,7 @@ public sealed class Afterburn : CustomPowerModel
 
         await CardPileCmd.AddToCombatAndPreview<Burn>(
             targets,
-            PileType.Discard,
+            PileType.Draw,
             Amount,
             null);
     }

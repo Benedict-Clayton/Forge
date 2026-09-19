@@ -33,9 +33,9 @@ public sealed class SlagSlimeSmall : CustomMonsterModel
     public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 15, 14);
     public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 19, 18);
 
-    private int SlagAmount => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 2, 1);
+    private int SlagAmount => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 3, 2);
 
-    private int SpikeDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 3, 3);
+    private int SpikeDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 2, 2);
     private int SpikeHits => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 2, 2);
 
     private int CorrodeWeakenAmount => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 1, 1);

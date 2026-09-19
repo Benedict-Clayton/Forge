@@ -1,19 +1,23 @@
 {
     "FORGE-AFTERBURN.title": "Afterburn",
-    "FORGE-AFTERBURN.description": "When killed, shuffle [gold]Burns[/gold] into your discard pile.",
-    "FORGE-AFTERBURN.smartDescription": "When killed, shuffle [blue]{Amount}[blue] [gold]Burns[/gold], into your discard pile.",
+    "FORGE-AFTERBURN.description": "When killed, shuffle [gold]Burns[/gold] into your  Draw Pile.",
+    "FORGE-AFTERBURN.smartDescription": "When killed, shuffle [blue]{Amount}[/blue] [gold]Burns[/gold], into your Draw Pile.",
 
     "FORGE-SLAG.title": "Slag",
     "FORGE-SLAG.description": "When killed, you lose [gold]Dexterity[/gold].",
-    "FORGE-SLAG.smartDescription": "When killed, you lose [blue]{Amount}[blue] [gold]Dexterity[/gold].",
+    "FORGE-SLAG.smartDescription": "When killed, you lose [blue]{Amount}[/blue] [gold]Dexterity[/gold].",
 
     "FORGE-STAGGER.title": "Stagger",
-    "FORGE-STAGGER.description": "The first time this enemy takes a certain amount of damage this fight, this enemy becomes stunned.",
-    "FORGE-STAGGER.smartDescription": "After taking [blue]{Amount}[blue] damage, become stunned.",
+    "FORGE-STAGGER.description": "The first time this enemy takes a certain amount of damage this fight, this enemy becomes [gold]Stunned[/gold].",
+    "FORGE-STAGGER.smartDescription": "After taking [blue]{Amount}[/blue] damage, become [gold]Stunned[/gold].",
 
     "FORGE-SIMPLIFY.title": "Simplify",
     "FORGE-SIMPLIFY.description": "The costs of your cards are set until the end of your turn.",
-    "FORGE-SIMPLIFY.smartDescription": "The costs of your cards are [blue]{Amount}[blue] until the end of your turn.",
+    "FORGE-SIMPLIFY.smartDescription": "The costs of your cards are [blue]{Amount}[/blue] until the end of your turn.",
+
+    "FORGE-BLAZE.title": "Blaze",
+    "FORGE-BLAZE.description": "The first time an enemy's HP reaches [blue]{Amount}[/blue] or below, gains 5 [gold]Strength[/gold].",
+    "FORGE-BLAZE.smartDescription": "The first time an enemy's HP reaches [blue]{Amount}[/blue] or below, gains 5 [gold]Strength[/gold].",
 
     "FORGE-ATTRACT.title": "Attract",
     "FORGE-ATTRACT.description": "Your hand has [gold]Retain[/gold]. At the end of your turn, swap to [gold]Repel[/gold].",

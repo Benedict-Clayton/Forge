@@ -33,11 +33,17 @@
     "FORGE-SLAG_SLIME_MEDIUM.moves.SPIKE.title": "Spike",
     "FORGE-SLAG_SLIME_MEDIUM.moves.CORRODE.title": "Corrode",
 
+    "FORGE-FIREKEEPER.name": "Firekeeper",
+    "FORGE-FIREKEEPER.moves.SEAR.title": "Sear",
+    "FORGE-FIREKEEPER.moves.SWELTER.title": "Swelter",
+    "FORGE-FIREKEEPER.moves.INFLAME.title": "Inflame",
+    "FORGE-FIREKEEPER.moves.INFERNO.title": "Inferno",
+
     "FORGE-LIVING_LODESTONE.name": "Living Lodestone",
     "FORGE-LIVING_LODESTONE.moves.MAGNETIZE.title": "Magnetize",
     "FORGE-LIVING_LODESTONE.moves.ATTRACTION.title": "Fatal Attraction",
     "FORGE-LIVING_LODESTONE.moves.ROTATE.title": "Rotate",
-    "FORGE-LIVING_LODESTONEE.moves.EXPULSION.title": "Expulsion",
+    "FORGE-LIVING_LODESTONE.moves.EXPULSION.title": "Expulsion",
 
     "FORGE-OVERSEER.name": "Overseer",
     "FORGE-OVERSEER.moves.CALL.title": "Call Servo",

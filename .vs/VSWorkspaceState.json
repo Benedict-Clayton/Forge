@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Forge",
-    "\\Forge\\localization",
-    "\\Forge\\localization\\eng",
     "\\images",
-    "\\images\\monsters",
-    "\\Patches\\OverseerPatch",
-    "\\scenes\\encounters",
+    "\\images\\powers",
+    "\\Powers",
     "\\Scripts",
-    "\\Scripts\\Enemies"
+    "\\Scripts\\Encounters",
+    "\\Scripts\\Encounters\\Elites",
+    "\\Scripts\\Encounters\\Room Encounters",
+    "\\Scripts\\Encounters\\Room Encounters\\Easy",
+    "\\Scripts\\Encounters\\Room Encounters\\Normal"
   ],
-  "SelectedNode": "\\Scripts\\Encounters\\Bosses\\OverseerBoss.cs",
+  "SelectedNode": "\\Powers\\Stagger.cs",
   "PreviewInSolutionExplorer": false
 }
