@@ -17,9 +17,11 @@ public sealed class ForgeAct : CustomActModel
     [
         ModelDb.Encounter<PyrelingWeak>(),
         ModelDb.Encounter<OrbInABoxWeak>(),
+        ModelDb.Encounter<ForgeSlimesWeak>(),
         ModelDb.Encounter<DancingBladeWeak>(),
 
         ModelDb.Encounter<PyrelingNormal>(),
+        ModelDb.Encounter<ForgeSlimesNormal>(),
         ModelDb.Encounter<SnekorbNormal>(),
         ModelDb.Encounter<ChompersNormal>(),
         ModelDb.Encounter<SwordBoxNormal>(),

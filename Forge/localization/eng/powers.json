@@ -1,4 +1,12 @@
 {
+    "FORGE-AFTERBURN.title": "Afterburn",
+    "FORGE-AFTERBURN.description": "When killed, shuffle [gold]Burns[/gold] into your discard pile.",
+    "FORGE-AFTERBURN.smartDescription": "When killed, shuffle [blue]{Amount}[blue] [gold]Burns[/gold], into your discard pile.",
+
+    "FORGE-SLAG.title": "Slag",
+    "FORGE-SLAG.description": "When killed, you lose [gold]Dexterity[/gold].",
+    "FORGE-SLAG.smartDescription": "When killed, you lose [blue]{Amount}[blue] [gold]Dexterity[/gold].",
+
     "FORGE-STAGGER.title": "Stagger",
     "FORGE-STAGGER.description": "The first time this enemy takes a certain amount of damage this fight, this enemy becomes stunned.",
     "FORGE-STAGGER.smartDescription": "After taking [blue]{Amount}[blue] damage, become stunned.",

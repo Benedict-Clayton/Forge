@@ -108,7 +108,7 @@ public sealed class Sneckorb : CustomMonsterModel
 			.FromMonster(this)
 			.Execute(null);
 
-		await PowerCmd.Apply<Simplify>((PlayerChoiceContext)new ThrowingPlayerChoiceContext(), (IEnumerable<Creature>)targets, currentNormalizeAmount, this.Creature, (CardModel)null);
+		await PowerCmd.Apply<Simplify>((PlayerChoiceContext)new ThrowingPlayerChoiceContext(), (IEnumerable<Creature>)targets, currentNormalizeAmount, this.Creature, null);
 	}
 
 	private async Task LaserMove(IReadOnlyList<Creature> targets)
