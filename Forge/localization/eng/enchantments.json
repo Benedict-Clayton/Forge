@@ -1,0 +1,9 @@
+{
+    "FORGE-DORMANT.title": "Dormant",
+    "FORGE-DORMANT.description": "Reduce this card’s cost by 1. The first time you draw this card, it's [blue]Unplayable[/blue] until the end of your turn.",
+    "FORGE-DORMANT.extraCardText": "",
+
+    "FORGE-BURY.title": "Bury",
+    "FORGE-BURY.description": "Start combat with this card in your [gold]Discard Pile[/gold].",
+    "FORGE-BURY.extraCardText": ""
+}

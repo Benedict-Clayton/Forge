@@ -46,17 +46,20 @@ public sealed class SputteringFurnace : CustomEventModel
         await CardPileCmd.RemoveFromDeck(
             (IReadOnlyList<CardModel>)
             (await CardSelectCmd.FromDeckForRemoval(
-                Owner,
+                Owner!,
                 new CardSelectorPrefs(
                     CardSelectorPrefs.RemoveSelectionPrompt,
                     1)))
             .ToList<CardModel>());
 
-        List<CardModel> list = PileType.Deck.GetPile(this.Owner).Cards.ToList();
+        List<CardModel> list = PileType.Deck.GetPile(this.Owner!).Cards.ToList();
 
-        CardPileCmd.RemoveFromDeck(
-            this.Rng.NextItem<CardModel>((IEnumerable<CardModel>)list),
-            true);
+        CardModel? randomCard = this.Rng.NextItem<CardModel>((IEnumerable<CardModel>)list);
+
+        if (randomCard != null)
+        {
+            await CardPileCmd.RemoveFromDeck(randomCard, true);
+        }
 
         SetEventFinished(PageDescription("FEED"));
     }
@@ -70,16 +73,21 @@ public sealed class SputteringFurnace : CustomEventModel
             false);
 
         List<CardModel> list = PileType.Deck
-            .GetPile(this.Owner)
+            .GetPile(this.Owner!)
             .Cards
             .Where(c => c.IsUpgradable)
             .ToList();
 
         if (list.Count > 0)
         {
-            CardCmd.Upgrade(
-                this.Rng.NextItem<CardModel>(list),
-                CardPreviewStyle.EventLayout);
+            CardModel? card = this.Rng.NextItem<CardModel>(list);
+
+            if (card != null)
+            {
+                CardCmd.Upgrade(
+                    card,
+                    CardPreviewStyle.EventLayout);
+            }
         }
 
         SetEventFinished(PageDescription("USE"));

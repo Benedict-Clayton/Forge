@@ -35,14 +35,17 @@ public sealed class ForgeAct : CustomActModel
     public override IEnumerable<EventModel> AllEvents =>
     [
         ModelDb.Event<ScrapSlime>(),
-        ModelDb.Event<Amalgamator>(),
+        ModelDb.Event<SputteringFurnace>(),
+        ModelDb.Event<GremlinContractor>(),
+        ModelDb.Event<GhostCouncil>(),
 
-        ModelDb.Event<Bugslayer>(),
+        ModelDb.Event<Amalgamator>(),
+        // ModelDb.Event<Bugslayer>(),
         ModelDb.Event<ColorfulPhilosophers>(),
         ModelDb.Event<ColossalFlower>(),
-        ModelDb.Event<FieldOfManSizedHoles>(),
-        ModelDb.Event<InfestedAutomaton>(),
-        ModelDb.Event<LostWisp>(),
+        // ModelDb.Event<FieldOfManSizedHoles>(),
+        // ModelDb.Event<InfestedAutomaton>(),
+        // ModelDb.Event<LostWisp>(),
         ModelDb.Event<SpiritGrafter>(),
         ModelDb.Event<TheLanternKey>()
     ];

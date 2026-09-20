@@ -4,14 +4,13 @@
     "FORGE-SCRAP_SLIME.pages.INITIAL.description": "You spot an ooze that has eaten an array of junk. However, something shines from within...\n\nShould you reach into the dangerous slime for it?",
 
     "FORGE-SCRAP_SLIME.pages.INITIAL.options.REACH_IN.title": "Reach In",
-    "FORGE-SCRAP_SLIME.pages.INITIAL.options.REACH_IN.description": "[red]Lose 11 HP[/[red]]. Obtain a random [blue]Relic[/blue].",
+    "FORGE-SCRAP_SLIME.pages.INITIAL.options.REACH_IN.description": "[red]Lose 11 HP[/red]. Obtain a random [blue]Relic[/blue].",
 
     "FORGE-SCRAP_SLIME.pages.INITIAL.options.STUDY_IT.title": "Study It",
     "FORGE-SCRAP_SLIME.pages.INITIAL.options.STUDY_IT.description": "[green]Gain a random uncommon [blue]Potion[/blue].[/green]",
 
     "FORGE-SCRAP_SLIME.pages.REACH.description": "[red][jitter]Ouch![/jitter][/red]\n\nAfter rummaging through the metal and burning acid, you finally grab hold of a [gold]relic[/gold] and yank it out.\n\nYou pull your way out of the ooze [red]damaged[/red] but rewarded.",
     "FORGE-SCRAP_SLIME.pages.STUDY.description": "Examining the Ooze, it eventually leads you towards a compartment with a potion!",
-
 
     "FORGE-SPUTTERING_FURNACE.title": "Sputtering Furnace",
 
@@ -22,5 +21,48 @@
     "FORGE-SPUTTERING_FURNACE.pages.INITIAL.options.USE_IT.description": "[green]Upgrade a random card in your deck.[/green] [red]Lose 3 Max HP.[/red]",
 
     "FORGE-SPUTTERING_FURNACE.pages.FEED.description": "As you feed it, the flames [red][jitter]ROAR[/jitter][/red] to life!\n\nYou may have overfed it a little...",
-    "FORGE-SPUTTERING_FURNACE.pages.USE.description": "You decide to use the last of its flames to work. The heat is intense, but you manage to make use of it."
+    "FORGE-SPUTTERING_FURNACE.pages.USE.description": "You decide to use the last of its flames to work. The heat is intense, but you manage to make use of it.",
+
+
+    "FORGE-GHOST_COUNCIL.title": "Council of Ghosts",
+
+    "FORGE-GHOST_COUNCIL.pages.INITIAL.description": "Thick black smog billows from vents, filling the room in darkness. Out of the smog, three masked apparitions appear.\n\nEach of them beckon to you with promises of a gift, even as they bicker amongst themselves.",
+
+    "FORGE-GHOST_COUNCIL.pages.INITIAL.options.SCHEME_IT.title": "Scheme",
+    "FORGE-GHOST_COUNCIL.pages.INITIAL.options.SCHEME_IT.description": "[green]Enchant 1 card with [gold]Dormant[/gold].[/green]",
+
+    "FORGE-GHOST_COUNCIL.pages.INITIAL.options.PLAY_IT.title": "Play",
+    "FORGE-GHOST_COUNCIL.pages.INITIAL.options.PLAY_IT.description": "[green]Gain 14 Max HP.[/green] [red]Add [blue]Writhe[/blue] to your Deck.[/red]",
+
+    "FORGE-GHOST_COUNCIL.pages.INITIAL.options.CAPTURE_IT.title": "Capture",
+    "FORGE-GHOST_COUNCIL.pages.INITIAL.options.CAPTURE_IT.description": "[red]Lose 6 Max HP.[/red] [green]Procure 1 [blue]Ghost in a Jar[/blue].[/green]",
+
+    "FORGE-GHOST_COUNCIL.pages.SCHEME.description": "You reach your hand to the spindly apparition, and as it enters you, memories of plots and schemes fill your head.\n\nOh yes. The things you shall do when you reach the top...",
+
+    "FORGE-GHOST_COUNCIL.pages.PLAY.description": "The larger apparition laughs, and as it phases into you, you feel your body stiffen and joints crack, as you feel yourself... [jitter][red]Growing.[/red][/jitter]",
+
+    "FORGE-GHOST_COUNCIL.pages.CAPTURE.description": "The apparition with an oversized grin laughs, and as it phases through you, you feel your vision fade into black...\n\nWhen you come to, you feel sapped, with a curious bottle filled with 2 ghosts in it...",
+
+
+
+    "FORGE-GREMLIN_CONTRACTOR.title": "Gremlin Contractor",
+
+    "FORGE-GREMLIN_CONTRACTOR.pages.INITIAL.description": "You come across a well dressed Gremlin, clasping their hands. They introduce themselves as a quality assurance contractor.\n\n\"Hello, good person! I'm an independent quality assurance contractor! For a price, I can ensure your equipment is up to code!\"",
+
+    "FORGE-GREMLIN_CONTRACTOR.pages.INITIAL.options.TRIAL.title": "Trial",
+    "FORGE-GREMLIN_CONTRACTOR.pages.INITIAL.options.TRIAL.description": "[green]Heal 5 HP.[/green]",
+
+    "FORGE-GREMLIN_CONTRACTOR.pages.INITIAL.options.STANDARD.title": "Standard",
+    "FORGE-GREMLIN_CONTRACTOR.pages.INITIAL.options.STANDARD.description": "[red]Pay 55 Gold.[/red] [green]Enchant 1 card with [gold]Bury[/gold].[/green]",
+
+    "FORGE-GREMLIN_CONTRACTOR.pages.INITIAL.options.DELUXE.title": "Deluxe",
+    "FORGE-GREMLIN_CONTRACTOR.pages.INITIAL.options.DELUXE.description": "[red]Pay 99 Gold.[/red] [green]Enchant 2 cards with [gold]Bury[/gold].[/green]",
+    "FORGE-GREMLIN_CONTRACTOR.pages.INITIAL.options.DELUXE_LOCKED.title": "Deluxe",
+    "FORGE-GREMLIN_CONTRACTOR.pages.INITIAL.options.DELUXE_LOCKED.description": "[red]Requires 99 Gold.[/red]",
+
+    "FORGE-GREMLIN_CONTRACTOR.pages.TRIAL.description": "The Gremlin beams at you as you sign up for the trial.\n\n\"See? No commitment! And look at you, already feeling better!\"",
+
+    "FORGE-GREMLIN_CONTRACTOR.pages.STANDARD.description": "The Gremlin eagerly takes your gold and begins inspecting your deck.\n\n\"Don't worry. I'll make sure everything is thoroughly tested.\"",
+
+    "FORGE-GREMLIN_CONTRACTOR.pages.DELUXE.description": "The Gremlin's eyes widen as you hand over the gold.\n\n\"The Deluxe package! Now [jitter][gold]that's[/gold][/jitter] quality assurance!\""
 }

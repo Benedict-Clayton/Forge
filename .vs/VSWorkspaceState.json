@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Forge",
+    "\\Forge\\localization",
+    "\\Forge\\localization\\eng",
     "\\images",
-    "\\images\\powers",
-    "\\Powers",
-    "\\Scripts",
-    "\\Scripts\\Encounters",
-    "\\Scripts\\Encounters\\Elites",
-    "\\Scripts\\Encounters\\Room Encounters",
-    "\\Scripts\\Encounters\\Room Encounters\\Easy",
-    "\\Scripts\\Encounters\\Room Encounters\\Normal"
+    "\\images\\enchantments",
+    "\\images\\events",
+    "\\Patches",
+    "\\Patches\\EnchantmentsPatch",
+    "\\Patches\\OverseerPatch"
   ],
-  "SelectedNode": "\\Powers\\Stagger.cs",
+  "SelectedNode": "\\Forge\\localization\\eng\\events.json",
   "PreviewInSolutionExplorer": false
 }
