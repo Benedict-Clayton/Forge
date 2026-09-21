@@ -1,0 +1,12 @@
+{
+    "id": "Forge",
+    "name": "Forge",
+    "author": "JustATuna",
+    "description": "My first Slay the Spire 2 mod.",
+    "version": "0.1.0",
+    "min_game_version": "0.107.1",
+    "has_pck": true,
+    "has_dll": true,
+    "dependencies": [ { "id": "BaseLib" } ],
+    "affects_gameplay": true
+}
