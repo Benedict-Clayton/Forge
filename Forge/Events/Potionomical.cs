@@ -21,7 +21,7 @@ namespace Forge;
 
 public sealed class Potionomical : CustomEventModel
 {
-    private PotionModel _potionOption;
+    private PotionModel? _potionOption;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
     {
@@ -30,44 +30,52 @@ public sealed class Potionomical : CustomEventModel
 
     public override bool IsAllowed(IRunState runState)
     {
-        return runState.Players.All<Player>((Func<Player, bool>)(player => player.Potions.Any<PotionModel>()));
+        return runState.Players.All<Player>(
+            player => player.Potions.Any<PotionModel>());
     }
 
     public override void CalculateVars()
     {
-        _potionOption = Owner.Potions.Any()
+        _potionOption = Owner!.Potions.Any()
             ? Rng.NextItem(Owner.Potions)
             : null;
 
         if (_potionOption != null)
-            ((StringVar)DynamicVars["PotionName"]).StringValue = _potionOption.Title.GetFormattedText();
-        if (_cardOption != null)
-            ((StringVar)DynamicVars["CardName"]).StringValue = _cardOption.Title;
+            ((StringVar)DynamicVars["PotionName"]).StringValue =
+                _potionOption.Title.GetFormattedText();
     }
-
 
     protected override Task BeforeEventStarted(bool isPreFinished)
     {
-        Owner.CanUseOrRemovePotions = false;
+        Owner!.CanUseOrRemovePotions = false;
         return Task.CompletedTask;
     }
 
     protected override void OnEventFinished()
     {
-        Owner.CanUseOrRemovePotions = true;
+        Owner!.CanUseOrRemovePotions = true;
     }
 
     protected override IReadOnlyList<EventOption> GenerateInitialOptions()
     {
         var options = new List<EventOption>();
 
-        var title = L10NLookup($"{Id.Entry}.pages.INITIAL.options.GIVE_POTION.title");
-        var desc = L10NLookup($"{Id.Entry}.pages.INITIAL.options.GIVE_POTION.description");
-        options.Add(new EventOption(this,
-            async () => await GivePotion(_potionOption),
-            title, desc,
-            $"{Id.Entry}.pages.INITIAL.options.GIVE_POTION",
-            _potionOption.HoverTips).ThatHasDynamicTitle());
+        if (_potionOption != null)
+        {
+            options.Add(new EventOption(
+                this,
+                async () => await Experiment(_potionOption),
+                $"{Id.Entry}.pages.INITIAL.options.EXPERIMENT",
+                _potionOption.HoverTips
+            ).ThatHasDynamicTitle());
+        }
+
+        options.Add(new EventOption(
+            this,
+            async () => await BrewIt(),
+            $"{Id.Entry}.pages.INITIAL.options.BREW_IT",
+            Array.Empty<IHoverTip>()
+        ));
 
         return options;
     }
@@ -75,19 +83,21 @@ public sealed class Potionomical : CustomEventModel
     private async Task Experiment(PotionModel potion)
     {
         await PotionCmd.Discard(potion);
-        var rewards = new List<Reward>(choice);
-        // Gain a Colorless card reward.
-        for (int i = 0; i < 3; ++i)
-        {
-            rewards.Add(new CardReward(
+
+        var rewards = new List<Reward>();
+
+        rewards.Add(new CardReward(
                 CardCreationOptions.ForNonCombatWithDefaultOdds(
-                    new[] { (CardPoolModel)ModelDb.CardPool<ColorlessCardPool>() }),
-                3, Owner));
-        }
+                    new[]
+                    {
+                        (CardPoolModel)ModelDb.CardPool<ColorlessCardPool>()
+                    }),
+                3,
+                Owner!));
 
         await RewardsCmd.OfferCustom(Owner, rewards);
 
-        SetEventFinished("EXPERIMENT");
+        SetEventFinished(PageDescription("EXPERIMENT"));
     }
 
     private async Task BrewIt()

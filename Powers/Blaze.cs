@@ -21,6 +21,7 @@ public sealed class Blaze : CustomPowerModel
 {
     public override PowerType Type => PowerType.Buff;
     public override PowerStackType StackType => PowerStackType.Counter;
+    public override bool ShouldScaleInMultiplayer => true;
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips
     {

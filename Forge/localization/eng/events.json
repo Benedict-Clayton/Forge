@@ -64,5 +64,19 @@
 
     "FORGE-GREMLIN_CONTRACTOR.pages.STANDARD.description": "The Gremlin eagerly takes your gold and begins inspecting your deck.\n\n\"Don't worry. I'll make sure everything is thoroughly tested.\"",
 
-    "FORGE-GREMLIN_CONTRACTOR.pages.DELUXE.description": "The Gremlin's eyes widen as you hand over the gold.\n\n\"The Deluxe package! Now [jitter][gold]that's[/gold][/jitter] quality assurance!\""
+    "FORGE-GREMLIN_CONTRACTOR.pages.DELUXE.description": "The Gremlin's eyes widen as you hand over the gold.\n\n\"The Deluxe package! Now [jitter][gold]that's[/gold][/jitter] quality assurance!\"",
+
+    "FORGE-POTIONOMICAL.title": "Potionomical",
+
+    "FORGE-POTIONOMICAL.pages.INITIAL.description": "Following a pungent scent brings you to a room of spoiled potions. The notes of whoever used to be here remain...\n\nAs you skim through the notes, it looks like they were trying to make something. You eye your current potion.",
+
+    "FORGE-POTIONOMICAL.pages.INITIAL.options.EXPERIMENT.title": "Experiment",
+    "FORGE-POTIONOMICAL.pages.INITIAL.options.EXPERIMENT.description": "[red]Lose [gold]{PotionName}[/gold].[/red] [green]Gain a [blue]Colorless[/blue] card reward.[/green]",
+
+    "FORGE-POTIONOMICAL.pages.INITIAL.options.BREW_IT.title": "Brew It",
+    "FORGE-POTIONOMICAL.pages.INITIAL.options.BREW_IT.description": "[green]Gain a [blue]Foul Potion[/blue].[/green]",
+
+    "FORGE-POTIONOMICAL.pages.EXPERIMENT.description": "You carefully follow the instructions, mixing your potion alongside the remains. With a poof and a puff, you find a new item ready to be utilized!",
+
+    "FORGE-POTIONOMICAL.pages.BREW_IT.description": "You decide to collect what remains of the experiment.\n\nThe result is... questionable, but it should do the job."
 }
