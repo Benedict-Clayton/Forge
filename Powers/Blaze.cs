@@ -58,7 +58,7 @@ public sealed class Blaze : CustomPowerModel
         }
 
         Flash();
-        await PowerCmd.Apply<StrengthPower>(choiceContext, this.Owner, 5, this.Owner, (CardModel)null);
+        await PowerCmd.Apply<StrengthPower>(choiceContext, this.Owner!, 5, this.Owner!, null);
         await PowerCmd.Remove((PowerModel)this);
     }
 }

@@ -11,7 +11,7 @@ namespace Forge;
 
 public sealed class ForgeAct : CustomActModel
 {
-    public ForgeAct() : base(actNumber: 2) { }
+    public ForgeAct() : base(actNumber: 2, true) { }
 
     public override IEnumerable<EncounterModel> GenerateAllEncounters() =>
     [
@@ -38,6 +38,7 @@ public sealed class ForgeAct : CustomActModel
         ModelDb.Event<SputteringFurnace>(),
         ModelDb.Event<GremlinContractor>(),
         ModelDb.Event<GhostCouncil>(),
+        ModelDb.Event<Potionomical>(),
 
         ModelDb.Event<Amalgamator>(),
         // ModelDb.Event<Bugslayer>(),

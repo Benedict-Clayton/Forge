@@ -16,11 +16,16 @@ using MegaCrit.Sts2.Core.Models.Potions;
 using MegaCrit.Sts2.Core.Entities.Potions;
 using MegaCrit.Sts2.Core.Rewards;
 using MegaCrit.Sts2.Core.Models.CardPools;
-
+using BaseLib.Patches.Content;
 namespace Forge;
 
 public sealed class Potionomical : CustomEventModel
 {
+    public override ActModel[] Acts =>
+    [
+        CustomContentDictionary.CustomActs.First(act => act is ForgeAct)
+    ];
+
     private PotionModel? _potionOption;
 
     protected override IEnumerable<DynamicVar> CanonicalVars => new DynamicVar[]
@@ -95,7 +100,7 @@ public sealed class Potionomical : CustomEventModel
                 3,
                 Owner!));
 
-        await RewardsCmd.OfferCustom(Owner, rewards);
+        await RewardsCmd.OfferCustom(Owner!, rewards);
 
         SetEventFinished(PageDescription("EXPERIMENT"));
     }

@@ -15,11 +15,17 @@ using MegaCrit.Sts2.Core.Models.PotionPools;
 using MegaCrit.Sts2.Core.Models.Potions;
 using MegaCrit.Sts2.Core.Entities.Potions;
 using MegaCrit.Sts2.Core.Rewards;
+using BaseLib.Patches.Content;
 
 namespace Forge;
 
 public sealed class ScrapSlime : CustomEventModel
 {
+    public override ActModel[] Acts =>
+    [
+        CustomContentDictionary.CustomActs.First(act => act is ForgeAct)
+    ];
+
     public override bool IsAllowed(IRunState runState)
     {
         return runState.Players.All(p => p.Creature.CurrentHp >= 12);

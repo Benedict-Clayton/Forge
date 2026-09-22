@@ -2,14 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\Forge",
+    "\\Forge\\Events",
     "\\Forge\\localization",
-    "\\Forge\\localization\\eng",
-    "\\images",
-    "\\images\\enchantments",
-    "\\images\\events",
-    "\\Patches",
-    "\\Patches\\EnchantmentsPatch",
-    "\\Patches\\OverseerPatch"
+    "\\Patches\\OverseerPatch",
+    "\\Powers",
+    "\\ReleaseFile",
+    "\\ReleaseFile\\Forge",
+    "\\scenes\\encounters",
+    "\\Scripts"
   ],
   "SelectedNode": "\\Forge\\localization\\eng\\events.json",
   "PreviewInSolutionExplorer": false

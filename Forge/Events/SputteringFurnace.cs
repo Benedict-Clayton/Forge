@@ -19,7 +19,7 @@ using MegaCrit.Sts2.Core.Nodes.CommonUi;
 using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.CardSelection;
-
+using BaseLib.Patches.Content;
 
 namespace Forge;
 
@@ -27,6 +27,11 @@ namespace Forge;
 
 public sealed class SputteringFurnace : CustomEventModel
 {
+    public override ActModel[] Acts =>
+    [
+        CustomContentDictionary.CustomActs.First(act => act is ForgeAct)
+    ];
+
     protected override IEnumerable<DynamicVar> CanonicalVars => new[]
     {
         new DynamicVar("UseMaxHpLoss", 3M)

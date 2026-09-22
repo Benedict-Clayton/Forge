@@ -26,12 +26,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Models.Cards;
-
+using BaseLib.Patches.Content;
 namespace Forge;
 
 public sealed class GremlinContractor : CustomEventModel
 {
-	protected override IEnumerable<DynamicVar> CanonicalVars => new[]
+    public override ActModel[] Acts =>
+    [
+        CustomContentDictionary.CustomActs.First(act => act is ForgeAct)
+    ];
+
+    protected override IEnumerable<DynamicVar> CanonicalVars => new[]
 	{
 		new StringVar("Bury", ModelDb.Enchantment<Bury>().Title.GetFormattedText()),
 		new DynamicVar("TrialHeal", 5M),

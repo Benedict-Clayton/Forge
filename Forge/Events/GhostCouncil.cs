@@ -26,17 +26,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MegaCrit.Sts2.Core.Models.Cards;
-
+using MegaCrit.Sts2.Core.Models.Acts;
+using BaseLib.Patches.Content;
 namespace Forge;
 
 public sealed class GhostCouncil : CustomEventModel
 {
+    public override ActModel[] Acts =>
+    [
+        CustomContentDictionary.CustomActs.First(act => act is ForgeAct)
+    ];
+
     protected override IEnumerable<DynamicVar> CanonicalVars => new[]
     {
         new StringVar(
         "Dormant",
         ModelDb.Enchantment<Dormant>().Title.GetFormattedText()),
-        new DynamicVar("UseMaxHpLoss", 6M),
+        new DynamicVar("UseMaxHpLoss", 5M),
         new DynamicVar("UseMaxHpGain", 14M)
     };
 
@@ -46,7 +52,7 @@ public sealed class GhostCouncil : CustomEventModel
         {
             Option(SchemeIt, HoverTipFactory.FromEnchantment<Dormant>()),
             Option(PlayIt, HoverTipFactory.FromCardWithCardHoverTips<Writhe>()),
-            Option(CaptureIt, "INITIAL", HoverTipFactory.FromPotion((PotionModel) ModelDb.Potion<GhostInAJar>())).ThatDecreasesMaxHp(6M)
+            Option(CaptureIt, "INITIAL", HoverTipFactory.FromPotion((PotionModel) ModelDb.Potion<GhostInAJar>())).ThatDecreasesMaxHp(5M)
         };
     }
 

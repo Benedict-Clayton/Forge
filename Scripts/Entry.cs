@@ -3,6 +3,7 @@ using HarmonyLib;
 using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using MegaCrit.Sts2.Core.Models;
+using BaseLib.Patches.Content;
 
 namespace Forge.Scripts;
 
@@ -14,6 +15,15 @@ public class Entry
     // Initialization function
     public static void Init()
     {
+        var forgeAct = new ForgeAct();
+
+        Log.Info($"Custom Acts count: {CustomContentDictionary.CustomActs.Count}");
+
+        foreach (var act in CustomContentDictionary.CustomActs)
+        {
+            Log.Info($"CUSTOM ACT: {act.GetType().FullName}");
+        }
+
         var sts2Assembly = typeof(ActModel).Assembly;
 
         foreach (var type in sts2Assembly.GetTypes())
