@@ -35,7 +35,7 @@
     "FORGE-GHOST_COUNCIL.pages.INITIAL.options.PLAY_IT.description": "[green]Gain 14 Max HP.[/green] [red]Add [blue]Writhe[/blue] to your Deck.[/red]",
 
     "FORGE-GHOST_COUNCIL.pages.INITIAL.options.CAPTURE_IT.title": "Capture",
-    "FORGE-GHOST_COUNCIL.pages.INITIAL.options.CAPTURE_IT.description": "[red]Lose 6 Max HP.[/red] [green]Procure 1 [blue]Ghost in a Jar[/blue].[/green]",
+    "FORGE-GHOST_COUNCIL.pages.INITIAL.options.CAPTURE_IT.description": "[red]Lose 5 Max HP.[/red] [green]Procure 1 [blue]Ghost in a Jar[/blue].[/green]",
 
     "FORGE-GHOST_COUNCIL.pages.SCHEME.description": "You reach your hand to the spindly apparition, and as it enters you, memories of plots and schemes fill your head.\n\nOh yes. The things you shall do when you reach the top...",
 
@@ -78,5 +78,27 @@
 
     "FORGE-POTIONOMICAL.pages.EXPERIMENT.description": "You carefully follow the instructions, mixing your potion alongside the remains. With a poof and a puff, you find a new item ready to be utilized!",
 
-    "FORGE-POTIONOMICAL.pages.BREW_IT.description": "You decide to collect what remains of the experiment.\n\nThe result is... questionable, but it should do the job."
+    "FORGE-POTIONOMICAL.pages.BREW_IT.description": "You decide to collect what remains of the experiment.\n\nThe result is... questionable, but it should do the job.",
+
+    "FORGE-GACHA_MACHINE.title": "Relic Gacha",
+
+    "FORGE-GACHA_MACHINE.pages.INITIAL.description": "A strange dispenser sits before you. Engraved in the machine is the phrase, 50/50.\n\nThere seems to be a slot to insert money?",
+
+    "FORGE-GACHA_MACHINE.pages.INITIAL.options.WISH.title": "Wish",
+    "FORGE-GACHA_MACHINE.pages.INITIAL.options.WISH.description": "[red]Pay 80 Gold.[/red] [green]Obtain 1 random [blue]Relic[/blue].[/green]",
+
+    "FORGE-GACHA_MACHINE.pages.INITIAL.options.WISH_LOCKED.title": "Wish",
+    "FORGE-GACHA_MACHINE.pages.INITIAL.options.WISH_LOCKED.description": "[red]Requires {WishCost} Gold.[/red]",
+
+    "FORGE-GACHA_MACHINE.pages.INITIAL.options.SMASH.title": "Smack",
+    "FORGE-GACHA_MACHINE.pages.INITIAL.options.SMASH.description": "[green]Gain 40-50 Gold.[/green]",
+
+    "FORGE-GACHA_MACHINE.pages.INITIAL.options.LEAVE.title": "Give Up",
+    "FORGE-GACHA_MACHINE.pages.INITIAL.options.LEAVE.description": "Quit gambling.",
+
+    "FORGE-GACHA_MACHINE.pages.WISH.description": "You feed the machine your gold and pull the lever.\n\nThe machine rattles violently, flashing all sorts of dopamine pleasing colors, before finally dispensing an item.\n\nThe machine hums quietly, ready for another pull...",
+
+    "FORGE-GACHA_MACHINE.pages.SMASH.description": "You decide the machine isn't worth gambling with.\n\nAfter a few well-placed hits, something rattles loose inside. You collect the gold that falls out.",
+
+    "FORGE-GACHA_MACHINE.pages.LEAVE.description": "You decide you've had enough of this strange machine.\n\nYou leave knowing you made a wise economic decision."
 }

@@ -1,5 +1,5 @@
 {
     "SIMPLIFY.title": "Simplified",
     "SIMPLIFY.description": "This card's cost is set to X until the end of your turn.",
-    "FORGE-REPEL.smartDescription": "This card's cost is set to [blue]{Amount}[blue] until the end of your turn."
+    "SIMPLIFY.smartDescription": "This card's cost is set to [blue]{Amount}[blue] until the end of your turn."
 }

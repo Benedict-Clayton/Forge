@@ -72,16 +72,14 @@ public sealed class GremlinContractor : CustomEventModel
 
 	private async Task Trial()
 	{
-		await CreatureCmd.Heal(
-			Owner!.Creature,
-			5M);
+		await CreatureCmd.Heal(Owner!.Creature, DynamicVars["TrialHeal"].BaseValue);
 
 		SetEventFinished(PageDescription("TRIAL"));
 	}
 
 	private async Task Standard()
 	{
-		await PlayerCmd.LoseGold(55M, this.Owner!, GoldLossType.Spent);
+		await PlayerCmd.LoseGold(DynamicVars["StandardCost"].BaseValue, this.Owner!, GoldLossType.Spent);
 
 		await EnchantCards(1);
 
@@ -90,7 +88,7 @@ public sealed class GremlinContractor : CustomEventModel
 
 	private async Task Deluxe()
 	{
-		await PlayerCmd.LoseGold(99M, this.Owner!, GoldLossType.Spent);
+		await PlayerCmd.LoseGold(DynamicVars["DeluxeCost"].BaseValue, this.Owner!, GoldLossType.Spent);
 
 		await EnchantCards(2);
 

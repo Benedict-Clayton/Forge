@@ -16,8 +16,8 @@
     "FORGE-SIMPLIFY.smartDescription": "The costs of your cards are [blue]{Amount}[/blue] until the end of your turn.",
 
     "FORGE-BLAZE.title": "Blaze",
-    "FORGE-BLAZE.description": "The first time an enemy's HP reaches [blue]{Amount}[/blue] or below, gains 5 [gold]Strength[/gold].",
-    "FORGE-BLAZE.smartDescription": "The first time an enemy's HP reaches [blue]{Amount}[/blue] or below, gains 5 [gold]Strength[/gold].",
+    "FORGE-BLAZE.description": "The first time ANY enemy's HP reaches [blue]{Amount}[/blue] or below, gains 5 [gold]Strength[/gold].",
+    "FORGE-BLAZE.smartDescription": "The first time ANY enemy's HP reaches [blue]{Amount}[/blue] or below, gains 5 [gold]Strength[/gold].",
 
     "FORGE-ATTRACT.title": "Attract",
     "FORGE-ATTRACT.description": "Your hand has [gold]Retain[/gold]. At the end of your turn, swap to [gold]Repel[/gold].",

@@ -39,11 +39,12 @@ public sealed class ForgeAct : CustomActModel
         ModelDb.Event<GremlinContractor>(),
         ModelDb.Event<GhostCouncil>(),
         ModelDb.Event<Potionomical>(),
+        ModelDb.Event<GachaMachine>(),
 
         ModelDb.Event<Amalgamator>(),
         // ModelDb.Event<Bugslayer>(),
         ModelDb.Event<ColorfulPhilosophers>(),
-        ModelDb.Event<ColossalFlower>(),
+        // ModelDb.Event<ColossalFlower>(),
         // ModelDb.Event<FieldOfManSizedHoles>(),
         // ModelDb.Event<InfestedAutomaton>(),
         // ModelDb.Event<LostWisp>(),

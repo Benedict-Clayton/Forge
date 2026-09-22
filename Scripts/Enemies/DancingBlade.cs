@@ -38,12 +38,12 @@ public sealed class DancingBlade : CustomMonsterModel
     public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 85, 80);
 
     private int DanceStrength => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 3, 3);
-    private int DanceBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 9, 7);
+    private int DanceBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 10, 8);
 
-    private int RiposteDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 13, 12);
+    private int RiposteDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 14, 12);
     private int RiposteBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 12, 10);
 
-    private int CutDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 6, 5);
+    private int CutDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 7, 6);
     private const int CutHits = 2;
 
     private int ExecuteDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 5, 4);

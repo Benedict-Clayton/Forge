@@ -32,16 +32,19 @@ public sealed class LivingLodestone : CustomMonsterModel
     public const string ROTATE = "ROTATE";
     public const string EXPULSION = "EXPULSION";
 
-    public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 175, 155);
-    public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 175, 155);
+    public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 185, 165);
+    public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 185, 165);
+
+    private int RotateBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 22, 20);
+    private int RotateStrength => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 2, 2);
 
     private int AttractionDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 13, 11);
     private const int AttractionHits = 2;
 
-    private int RotateBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 22, 20);
-
     private int ExpelDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 20, 18);
     private int ExpelBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 16, 14);
+
+    private const int ArtifactAmount = 2;
 
 
     public override NCreatureVisuals CreateCustomVisuals()
@@ -55,6 +58,7 @@ public sealed class LivingLodestone : CustomMonsterModel
     public override async Task AfterAddedToRoom()
     {
         await base.AfterAddedToRoom();
+        await PowerCmd.Apply<ArtifactPower>(new ThrowingPlayerChoiceContext(), Creature, ArtifactAmount, Creature, null);
     }
 
     protected override MonsterMoveStateMachine GenerateMoveStateMachine()
@@ -70,7 +74,7 @@ public sealed class LivingLodestone : CustomMonsterModel
         var rotateState = new MoveState(
             ROTATE,
             RotateMove,
-            new AbstractIntent[] { new DefendIntent() }
+            new AbstractIntent[] { new DefendIntent(), new BuffIntent() }
         );
 
         var expelState = new MoveState(
@@ -110,6 +114,13 @@ public sealed class LivingLodestone : CustomMonsterModel
     private async Task RotateMove(IReadOnlyList<Creature> targets)
     {
         await CreatureCmd.GainBlock(this.Creature, RotateBlock, ValueProp.Move, null);
+        
+        await PowerCmd.Apply<StrengthPower>(
+            new ThrowingPlayerChoiceContext(),
+            Creature,
+            RotateStrength,
+            Creature,
+            null);
     }
 
     private async Task ExpelMove(IReadOnlyList<Creature> targets)

@@ -86,7 +86,7 @@ public sealed class GhostCouncil : CustomEventModel
 
     private async Task PlayIt()
     {
-        await CreatureCmd.GainMaxHp(Owner!.Creature, 14M);
+        await CreatureCmd.GainMaxHp(Owner!.Creature, DynamicVars["UseMaxHpGain"].BaseValue);
         await CardPileCmd.AddCurseToDeck<Writhe>(this.Owner);
 
         SetEventFinished(PageDescription("PLAY"));
@@ -97,7 +97,7 @@ public sealed class GhostCouncil : CustomEventModel
         await CreatureCmd.LoseMaxHp(
             new ThrowingPlayerChoiceContext(),
             Owner!.Creature,
-            6M,
+            DynamicVars["UseMaxHpLoss"].BaseValue,
             false);
 
         await RewardsCmd.OfferCustom(
