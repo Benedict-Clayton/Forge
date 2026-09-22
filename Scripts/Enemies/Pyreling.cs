@@ -36,6 +36,8 @@ public sealed class Pyreling : CustomMonsterModel
     private int GlowerDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 9, 7);
     private int BurnAmount => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 1, 1);
 
+    private int FlareAmount = AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 5, 4);
+
     private bool _burnFirst;
 
     public bool BurnFirst
@@ -53,14 +55,13 @@ public sealed class Pyreling : CustomMonsterModel
         Texture2D texture = GD.Load<Texture2D>("res://images/monsters/Pyreling.png");
 
         return NodeFactory<NCreatureVisuals>.CreateFromResource(texture);
-
-        // return NodeFactory<NCreatureVisuals>.CreateFromResource("res://images/monsters/Pyreling.png");
     }
 
     // Put statuses here.
     public override async Task AfterAddedToRoom()
     {
         await base.AfterAddedToRoom();
+        await PowerCmd.Apply<Flare>(new ThrowingPlayerChoiceContext(), Creature, FlareAmount, Creature, null);
     }
 
     protected override MonsterMoveStateMachine GenerateMoveStateMachine()

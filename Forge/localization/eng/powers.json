@@ -1,4 +1,8 @@
 {
+    "FORGE-FLARE.title": "Flare",
+    "FORGE-FLARE.description": "When killed, all enemies gain [gold]Vigor[/gold].",
+    "FORGE-FLARE.smartDescription": "When killed, all enemies gain [blue]{Amount}[/blue] [gold]Vigor[/gold].",
+
     "FORGE-AFTERBURN.title": "Afterburn",
     "FORGE-AFTERBURN.description": "When killed, shuffle [gold]Burns[/gold] into your  Draw Pile.",
     "FORGE-AFTERBURN.smartDescription": "When killed, shuffle [blue]{Amount}[/blue] [gold]Burns[/gold], into your Draw Pile.",
