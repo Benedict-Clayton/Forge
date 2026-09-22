@@ -47,7 +47,7 @@ public sealed class ForgeAct : CustomActModel
         // ModelDb.Event<FieldOfManSizedHoles>(),
         // ModelDb.Event<InfestedAutomaton>(),
         // ModelDb.Event<LostWisp>(),
-        ModelDb.Event<SpiritGrafter>(),
+        //cModelDb.Event<SpiritGrafter>(),
         ModelDb.Event<TheLanternKey>()
     ];
 

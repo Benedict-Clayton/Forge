@@ -49,7 +49,7 @@ public sealed class DancingBlade : CustomMonsterModel
     private int ExecuteDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 5, 4);
     private const int ExecuteHits = 4;
 
-    private const int StaggerAmount = 40;
+    private int StaggerAmount => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 50, 40);
 
     public override NCreatureVisuals CreateCustomVisuals()
     {
