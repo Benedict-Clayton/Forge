@@ -74,7 +74,7 @@ public sealed class SputteringFurnace : CustomEventModel
         await CreatureCmd.LoseMaxHp(
             new ThrowingPlayerChoiceContext(),
             Owner!.Creature,
-            3M,
+            DynamicVars["UseMaxHpLoss"].IntValue,
             false);
 
         List<CardModel> list = PileType.Deck

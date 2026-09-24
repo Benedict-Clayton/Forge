@@ -18,7 +18,7 @@
     "FORGE-SPUTTERING_FURNACE.pages.INITIAL.options.FEED_IT.title": "Feed It",
     "FORGE-SPUTTERING_FURNACE.pages.INITIAL.options.FEED_IT.description": "[green]Remove 1 card from your Deck.[/green] [red]Randomly remove another from your Deck.[/red]",
     "FORGE-SPUTTERING_FURNACE.pages.INITIAL.options.USE_IT.title": "Use It",
-    "FORGE-SPUTTERING_FURNACE.pages.INITIAL.options.USE_IT.description": "[green]Upgrade a random card in your deck.[/green] [red]Lose 3 Max HP.[/red]",
+    "FORGE-SPUTTERING_FURNACE.pages.INITIAL.options.USE_IT.description": "[green]Upgrade a random card in your deck.[/green] [red]Lose {UseMaxHpLoss} Max HP.[/red]",
 
     "FORGE-SPUTTERING_FURNACE.pages.FEED.description": "As you feed it, the flames [red][jitter]ROAR[/jitter][/red] to life!\n\nYou may have overfed it a little...",
     "FORGE-SPUTTERING_FURNACE.pages.USE.description": "You decide to use the last of its flames to work. The heat is intense, but you manage to make use of it.",
@@ -32,10 +32,10 @@
     "FORGE-GHOST_COUNCIL.pages.INITIAL.options.SCHEME_IT.description": "[green]Enchant 1 card with [gold]Dormant[/gold].[/green]",
 
     "FORGE-GHOST_COUNCIL.pages.INITIAL.options.PLAY_IT.title": "Play",
-    "FORGE-GHOST_COUNCIL.pages.INITIAL.options.PLAY_IT.description": "[green]Gain 14 Max HP.[/green] [red]Add [blue]Writhe[/blue] to your Deck.[/red]",
+    "FORGE-GHOST_COUNCIL.pages.INITIAL.options.PLAY_IT.description": "[green]Gain {UseMaxHpGain} Max HP.[/green] [red]Add [blue]Writhe[/blue] to your Deck.[/red]",
 
     "FORGE-GHOST_COUNCIL.pages.INITIAL.options.CAPTURE_IT.title": "Capture",
-    "FORGE-GHOST_COUNCIL.pages.INITIAL.options.CAPTURE_IT.description": "[red]Lose 5 Max HP.[/red] [green]Procure 1 [blue]Ghost in a Jar[/blue].[/green]",
+    "FORGE-GHOST_COUNCIL.pages.INITIAL.options.CAPTURE_IT.description": "[red]Lose {UseMaxHpLoss} Max HP.[/red] [green]Procure 1 [blue]Ghost in a Jar[/blue].[/green]",
 
     "FORGE-GHOST_COUNCIL.pages.SCHEME.description": "You reach your hand to the spindly apparition, and as it enters you, memories of plots and schemes fill your head.\n\nOh yes. The things you shall do when you reach the top...",
 

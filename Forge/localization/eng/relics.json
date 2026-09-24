@@ -1,0 +1,9 @@
+{
+    "FORGE-BURNT_SCAR.title": "Burnt Scar",
+    "FORGE-BURNT_SCAR.description": "At the start of the next combat, shuffle {BurnCount} [blue]Burns[/blue] into your Draw Pile.",
+    "FORGE-BURNT_SCAR.flavor": "WIP",
+
+    "FORGE-FRIENDLY_CUBE.title": "Friendly Cube",
+    "FORGE-FRIENDLY_CUBE.description": "At the start of combat, gain {BufferAmount} [blue]Buffer[/blue]. Lose this relic when you take unblocked damage.",
+    "FORGE-FRIENDLY_CUBE.flavor": "WIP"
+}
