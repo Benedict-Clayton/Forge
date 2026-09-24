@@ -90,8 +90,8 @@ public sealed class GachaMachine : CustomEventModel
     {
         await PlayerCmd.LoseGold(DynamicVars["WishCost"].BaseValue, Owner!);
 
-        var relic = RelicFactory.PullNextRelicFromFront(Owner).ToMutable();
-        await RelicCmd.Obtain(relic, Owner);
+        var relic = RelicFactory.PullNextRelicFromFront(Owner!).ToMutable();
+        await RelicCmd.Obtain(relic, Owner!);
 
         _wishCount++;
         DynamicVars["WishCost"].BaseValue *= 2;

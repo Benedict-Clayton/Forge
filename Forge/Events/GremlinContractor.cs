@@ -39,7 +39,7 @@ public sealed class GremlinContractor : CustomEventModel
     protected override IEnumerable<DynamicVar> CanonicalVars => new[]
 	{
 		new StringVar("Bury", ModelDb.Enchantment<Bury>().Title.GetFormattedText()),
-		new DynamicVar("TrialHeal", 5M),
+		new DynamicVar("HealAmount", 5M),
 		new DynamicVar("StandardCost", 55M),
 		new DynamicVar("DeluxeCost", 99M)
 	};
@@ -72,7 +72,7 @@ public sealed class GremlinContractor : CustomEventModel
 
 	private async Task Trial()
 	{
-		await CreatureCmd.Heal(Owner!.Creature, DynamicVars["TrialHeal"].BaseValue);
+		await CreatureCmd.Heal(Owner!.Creature, DynamicVars["HealAmount"].BaseValue);
 
 		SetEventFinished(PageDescription("TRIAL"));
 	}

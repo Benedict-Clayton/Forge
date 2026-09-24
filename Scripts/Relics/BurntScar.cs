@@ -35,9 +35,14 @@ public sealed class BurntScar : CustomRelicModel
             return new DynamicVar[2]
             {
                 new DynamicVar("Combats", (Decimal)CombatsLeft),
-                new DynamicVar("BurnCount", 1M)
+                new DynamicVar("BurnCount", 2M)
             };
         }
+    }
+
+    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    {
+        get => HoverTipFactory.FromCardWithCardHoverTips<Burn>();
     }
 
     [SavedProperty]

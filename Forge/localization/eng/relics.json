@@ -4,6 +4,6 @@
     "FORGE-BURNT_SCAR.flavor": "WIP",
 
     "FORGE-FRIENDLY_CUBE.title": "Friendly Cube",
-    "FORGE-FRIENDLY_CUBE.description": "At the start of combat, gain {BufferAmount} [blue]Buffer[/blue]. Lose this relic when you take unblocked damage.",
+    "FORGE-FRIENDLY_CUBE.description": "At the start of combat, gain [blue]{BufferAmount}[/blue] [gold]Buffer[/gold]. Breaks when you take unblocked damage.",
     "FORGE-FRIENDLY_CUBE.flavor": "WIP"
 }

@@ -40,16 +40,18 @@ public sealed class ForgeAct : CustomActModel
         ModelDb.Event<GhostCouncil>(),
         ModelDb.Event<Potionomical>(),
         ModelDb.Event<GachaMachine>(),
+        ModelDb.Event<EndangeredCube>(),
+        ModelDb.Event<DangerRoom>(),
 
-        ModelDb.Event<Amalgamator>(),
+        ModelDb.Event<Amalgamator>()
         // ModelDb.Event<Bugslayer>(),
-        ModelDb.Event<ColorfulPhilosophers>(),
+        // ModelDb.Event<ColorfulPhilosophers>(),
         // ModelDb.Event<ColossalFlower>(),
         // ModelDb.Event<FieldOfManSizedHoles>(),
         // ModelDb.Event<InfestedAutomaton>(),
         // ModelDb.Event<LostWisp>(),
         //cModelDb.Event<SpiritGrafter>(),
-        ModelDb.Event<TheLanternKey>()
+        // ModelDb.Event<TheLanternKey>()
     ];
 
     public override bool IsUnlocked(UnlockState unlockState) => true;
