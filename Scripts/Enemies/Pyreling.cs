@@ -33,7 +33,7 @@ public sealed class Pyreling : CustomMonsterModel
     public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 26, 23);
     public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 27, 24);
 
-    private int GlowerDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 9, 7);
+    private int GlowerDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 7, 6);
     private int BurnAmount => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 1, 1);
 
     private int FlareAmount = AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 5, 4);

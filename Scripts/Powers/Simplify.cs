@@ -62,13 +62,6 @@ public sealed class Simplify : CustomPowerModel
         if (side != Owner.Side)
             return;
 
-        /*
-        foreach (CardModel card in this.Owner.Player!.PlayerCombatState!.AllCards)
-        {
-            card.EnergyCost.SetThisCombat(card._energyCost._base);
-        }
-        */
-
         await PowerCmd.Remove(this);
     }
 }

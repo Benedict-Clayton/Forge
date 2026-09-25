@@ -19,6 +19,12 @@
     "FORGE-SNECKORB.moves.SIMPLIFY.title": "Simplifying Gaze",
     "FORGE-SNECKORB.moves.LASER.title": "Laser",
 
+    "FORGE-OXIDIZER.name": "Oxidizer",
+    "FORGE-OXIDIZER.moves.SLIDE.title": "Slide",
+    "FORGE-OXIDIZER.moves.OXIDIZE.title": "Oxidize",
+    "FORGE-OXIDIZER.moves.SLURP.title": "Slurp",
+    "FORGE-OXIDIZER.moves.LUNGE.title": "Lunge",
+
     "FORGE-LAVA_SLIME_SMALL.name": "Lava Slime (S)",
     "FORGE-LAVA_SLIME_SMALL.moves.SPUTTER.title": "Sputter",
     "FORGE-LAVA_SLIME_SMALL.moves.WARMUP.title": "Warm Up",

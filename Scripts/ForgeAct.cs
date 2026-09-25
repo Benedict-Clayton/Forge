@@ -28,6 +28,7 @@ public sealed class ForgeAct : CustomActModel
         ModelDb.Encounter<SnekorbNormal>(),
         ModelDb.Encounter<ChompersNormal>(),
         ModelDb.Encounter<SwordBoxNormal>(),
+        ModelDb.Encounter<OxidizerNormal>(),
 
         ModelDb.Encounter<FirekeeperDuoElite>(),
         ModelDb.Encounter<LivingLodestoneElite>(),

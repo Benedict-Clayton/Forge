@@ -7,6 +7,10 @@
     "FORGE-AFTERBURN.description": "When killed, shuffle [gold]Burns[/gold] into your  Draw Pile.",
     "FORGE-AFTERBURN.smartDescription": "When killed, shuffle [blue]{Amount}[/blue] [gold]Burns[/gold], into your Draw Pile.",
 
+    "FORGE-RUST.title": "Rust",
+    "FORGE-RUST.description": "Whenever this enemy's attacks are fully blocked, you lose [gold]Dexterity[/gold].",
+    "FORGE-RUST.smartDescription": "Whenever this enemy's attacks are fully blocked, you lose [blue]{Amount}[/blue] [gold]Dexterity[/gold].",
+
     "FORGE-SLAG.title": "Slag",
     "FORGE-SLAG.description": "When killed, you lose [gold]Dexterity[/gold].",
     "FORGE-SLAG.smartDescription": "When killed, you lose [blue]{Amount}[/blue] [gold]Dexterity[/gold].",

@@ -20,6 +20,9 @@
     "FORGE-CHOMPERS_NORMAL.loss": "{character} was chomped by the [gold]{encounter}[/gold].",
     "FORGE-CHOMPERS_NORMAL.title": "Chompers",
 
+    "FORGE-OXIDIZER_NORMAL.loss": "{character} was oxidized by the [gold]{encounter}[/gold].",
+    "FORGE-OXIDIZER_NORMAL.title": "Oxidizer",
+
     "FORGE-SWORD_BOX_NORMAL.loss": "A cheap magic trick was all it took for {character} to be taken out.",
     "FORGE-SWORD_BOX_NORMAL.title": "Sword Box",
 
