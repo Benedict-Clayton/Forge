@@ -17,7 +17,7 @@ public sealed class OxidizerNormal : CustomEncounterModel
 
     public override IEnumerable<EncounterTag> Tags => Array.Empty<EncounterTag>();
 
-    private static MonsterModel[] Sneckorb => new MonsterModel[]
+    private static MonsterModel[] Oxidizer => new MonsterModel[]
     {
         ModelDb.Monster<Oxidizer>()
     };

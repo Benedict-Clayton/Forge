@@ -27,7 +27,7 @@ namespace Forge;
 
 public sealed class Oxidizer : CustomMonsterModel
 {
-    public const string SLIDE = "SLIDE";
+    public const string FEELER = "FEELER";
     public const string OXIDIZE = "OXIDIZE";
     public const string SLURP = "SLURP";
     public const string LUNGE = "LUNGE";
@@ -38,19 +38,16 @@ public sealed class Oxidizer : CustomMonsterModel
 
     private const int RustAmount = 2;
 
-    private int SlideDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 6, 5);
-    private const int SlideHits = 2;
-    private const int SlideWeak = 2;
+    private int FeelerDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 10, 10);
+    private  int FeelerWeak = AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 2, 1);
 
     private int OxidizeDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 8, 8);
-    private const int InfectionAmount = 2;
+    private  int InfectionAmount = AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 2, 1);
 
     private int SlurpDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 2, 2);
-    private int SlurpHits => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 7, 6);
+    private int SlurpHits => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 6, 5);
 
     private int LungeDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 26, 23);
-
-
 
     public override NCreatureVisuals CreateCustomVisuals()
 	{
@@ -70,12 +67,12 @@ public sealed class Oxidizer : CustomMonsterModel
 	{
         var states = new List<MonsterState>();
 
-        var slideState = new MoveState(
-            SLIDE,
-            SlideMove,
+        var feelerState = new MoveState(
+            FEELER,
+            FeelerMove,
             new AbstractIntent[]
             {
-                new MultiAttackIntent(SlideDamage, SlideHits),
+                new SingleAttackIntent(FeelerDamage),
                 new DebuffIntent()
             }
         );
@@ -109,27 +106,26 @@ public sealed class Oxidizer : CustomMonsterModel
         );
 
 
-        slideState.FollowUpState = oxidizeState;
+        feelerState.FollowUpState = oxidizeState;
         oxidizeState.FollowUpState = slurpState;
         slurpState.FollowUpState = lungeState;
-        lungeState.FollowUpState = slideState;
+        lungeState.FollowUpState = feelerState;
 
-        states.Add(slideState);
+        states.Add(feelerState);
         states.Add(oxidizeState);
         states.Add(slurpState);
         states.Add(lungeState);
 
-        return new MonsterMoveStateMachine(states, slideState);
+        return new MonsterMoveStateMachine(states, feelerState);
     }
 
-    private async Task SlideMove(IReadOnlyList<Creature> targets)
+    private async Task FeelerMove(IReadOnlyList<Creature> targets)
     {
-        await DamageCmd.Attack(SlideDamage)
-            .WithHitCount(SlideHits)
+        await DamageCmd.Attack(FeelerDamage)
             .FromMonster(this)
             .Execute(null);
 
-        await PowerCmd.Apply<WeakPower>((PlayerChoiceContext)new ThrowingPlayerChoiceContext(), (IEnumerable<Creature>)targets, SlideWeak, this.Creature, null);
+        await PowerCmd.Apply<WeakPower>((PlayerChoiceContext)new ThrowingPlayerChoiceContext(), (IEnumerable<Creature>)targets, FeelerWeak, this.Creature, null);
 	}
 
     private async Task OxidizeMove(IReadOnlyList<Creature> targets)
