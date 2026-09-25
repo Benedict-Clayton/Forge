@@ -54,6 +54,8 @@ public sealed class Overseer : CustomMonsterModel
 
     private int servoSpawnCount = 0;
 
+    private bool spawnServoB;
+
     public override NCreatureVisuals CreateCustomVisuals()
     {
         Texture2D texture = GD.Load<Texture2D>(
@@ -166,7 +168,7 @@ public sealed class Overseer : CustomMonsterModel
     {
         while (amount >= 2)
         {
-            if (servoSpawnCount >= 6 && GD.Randf() < 0.75f)
+            if (servoSpawnCount >= 6 && spawnServoB)
             {
                 await SpawnEnemy<ServoB>();
                 servoSpawnCount += 2;
@@ -224,6 +226,8 @@ public sealed class Overseer : CustomMonsterModel
                 nextMove = CALL;
                 break;
         }
+
+        spawnServoB = servoSpawnCount >= 6 && rng.NextFloat() < 0.75f;
 
         previousMove = nextMove;
         return nextMove;

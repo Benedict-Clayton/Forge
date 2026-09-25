@@ -35,7 +35,7 @@ public sealed class DangerRoom : CustomEventModel
     {
         var currentAct = Owner!.RunState.Act;
 
-        var otherActs = ModelDb.ActsByIndex[1].Where(act => act != currentAct).ToList(); // [1] because thats an Act 2.
+        var otherActs = ModelDb.ActsByIndex[1].Where(act => !act.Equals(currentAct)).ToList(); // [1] because thats an Act 2.
 
         _normalAct = Rng.NextItem(otherActs)!;
         _eliteAct = Rng.NextItem(otherActs)!;
