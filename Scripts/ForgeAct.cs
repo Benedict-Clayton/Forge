@@ -6,6 +6,9 @@ using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Encounters;
 using MegaCrit.Sts2.Core.Models.Events;
 using MegaCrit.Sts2.Core.Unlocks;
+using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Rooms;
+using MegaCrit.Sts2.Core.Random;
 
 namespace Forge;
 
@@ -68,9 +71,9 @@ public sealed class ForgeAct : CustomActModel
     }
 
     // Colors differ from CustomActModel defaults (which are act 3 themed)
-    public override Color MapTraveledColor => new Color("27221C");
-    public override Color MapUntraveledColor => new Color("6E7750");
-    public override Color MapBgColor => new Color("9B9562");
+    public override Color MapTraveledColor => new Color("4A2920");
+    public override Color MapUntraveledColor => new Color("8A5132");
+    public override Color MapBgColor => new Color("C47A45");
 
     // Original had these empty; CustomActModel defaults to act 3 music
     public override string[] BgMusicOptions => ["event:/music/act2_a1_v2", "event:/music/act2_a2_v2"];
@@ -83,10 +86,22 @@ public sealed class ForgeAct : CustomActModel
     public override string ChestSpineSkinNameStroke => "act2_stroke";
     public override string ChestOpenSfx => "event:/sfx/ui/treasure/treasure_act2";
 
-    protected override string CustomMapTopBgPath => ModelDb.Act<Glory>().MapTopBgPath;
-    protected override string CustomMapMidBgPath => ModelDb.Act<Glory>().MapMidBgPath;
-    protected override string CustomMapBotBgPath => ModelDb.Act<Glory>().MapBotBgPath;
-    protected override string CustomRestSiteBackgroundPath => "res://scenes/rest_site/hive_rest_site.tscn";
+    protected override BackgroundAssets CustomGenerateBackgroundAssets(Rng rng)
+    {
+        return new CustomBackgroundAssets(
+            "res://BaseLib/scenes/dynamic_background.tscn",
+            new List<string>
+            {
+            "res://images/map/forge-background.tscn"
+            },
+            "res://images/map/forge-background.tscn"
+        );
+    }
+
+    protected override string CustomMapTopBgPath => ModelDb.Act<Overgrowth>().MapTopBgPath;
+    protected override string CustomMapMidBgPath => ModelDb.Act<Overgrowth>().MapMidBgPath;
+    protected override string CustomMapBotBgPath => ModelDb.Act<Overgrowth>().MapBotBgPath;
+    protected override string CustomRestSiteBackgroundPath => "res://scenes/rest_site/glory_rest_site.tscn";
 
     protected override int NumberOfWeakEncounters => 2;
     protected override int BaseNumberOfRooms => 14;

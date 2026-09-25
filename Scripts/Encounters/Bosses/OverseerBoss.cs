@@ -15,6 +15,14 @@ public sealed class OverseerBoss : CustomEncounterModel
     {
     }
 
+    public override string BossNodePath
+    {
+        get
+        {
+            return "res://images/map/forge-overseer_boss";
+        }
+    }
+
     public override bool IsValidForAct(ActModel act) => act is ForgeAct;
 
     public override IReadOnlyList<string> Slots

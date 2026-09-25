@@ -85,7 +85,7 @@
     "FORGE-GACHA_MACHINE.pages.INITIAL.description": "A strange dispenser sits before you. Engraved in the machine is the phrase, 50/50.\n\nThere seems to be a slot to insert money?",
 
     "FORGE-GACHA_MACHINE.pages.INITIAL.options.WISH.title": "Wish",
-    "FORGE-GACHA_MACHINE.pages.INITIAL.options.WISH.description": "[red]Pay 80 Gold.[/red] [green]Obtain 1 random [blue]Relic[/blue].[/green]",
+    "FORGE-GACHA_MACHINE.pages.INITIAL.options.WISH.description": "[red]Pay {WishCost} Gold.[/red] [green]Obtain 1 random [blue]Relic[/blue].[/green]",
 
     "FORGE-GACHA_MACHINE.pages.INITIAL.options.WISH_LOCKED.title": "Wish",
     "FORGE-GACHA_MACHINE.pages.INITIAL.options.WISH_LOCKED.description": "[red]Requires {WishCost} Gold.[/red]",

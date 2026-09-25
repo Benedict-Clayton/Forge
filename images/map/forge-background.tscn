@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmchvc3xl1n58"]
+
+[ext_resource type="Texture2D" uid="uid://cgghc0fd53y52" path="res://images/map/forge-background.png" id="1_3v3ou"]
+
+[node name="ForgeBackground" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1865.0
+offset_top = -767.0
+offset_right = 1985.0
+offset_bottom = 935.0
+texture = ExtResource("1_3v3ou")

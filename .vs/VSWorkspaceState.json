@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Forge",
     "\\Forge\\Events",
     "\\Forge\\localization",
-    "\\Patches\\OverseerPatch",
-    "\\Powers",
-    "\\ReleaseFile",
-    "\\ReleaseFile\\Forge",
-    "\\scenes\\encounters",
-    "\\Scripts"
+    "\\images",
+    "\\images\\map",
+    "\\Scripts",
+    "\\Scripts\\Encounters",
+    "\\Scripts\\Encounters\\Bosses",
+    "\\Scripts\\Encounters\\Elites",
+    "\\Scripts\\Encounters\\Room Encounters",
+    "\\Scripts\\Encounters\\Room Encounters\\Easy"
   ],
-  "SelectedNode": "\\Forge\\localization\\eng\\events.json",
+  "SelectedNode": "\\images\\map",
   "PreviewInSolutionExplorer": false
 }
