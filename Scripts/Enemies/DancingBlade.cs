@@ -33,15 +33,17 @@ public sealed class DancingBlade : CustomMonsterModel
     public const string EXECUTE = "EXECUTE";
     private const string STUNNED = "STUNNED";
     private MoveState _stunnedState = null!;
+    private MoveState _previousState = null!;
 
     public override int MinInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 85, 80);
     public override int MaxInitialHp => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 85, 80);
 
     private int DanceStrength => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 3, 3);
-    private int DanceBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 10, 8);
+    private int DanceDexterity => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 3, 3);
+    private int DanceBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 12, 10);
 
     private int RiposteDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 14, 12);
-    private int RiposteBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 12, 10);
+    private int RiposteBlock => AscensionHelper.GetValueIfAscension(AscensionLevel.ToughEnemies, 10, 8);
 
     private int CutDamage => AscensionHelper.GetValueIfAscension(AscensionLevel.DeadlyEnemies, 7, 6);
     private const int CutHits = 2;
@@ -110,15 +112,15 @@ public sealed class DancingBlade : CustomMonsterModel
         states.Add(riposteState);
         states.Add(cutState);
         states.Add(executeState);
-        states.Add(_stunnedState);
 
         return new MonsterMoveStateMachine(states, danceState);
     }
 
     private async Task DanceMove(IReadOnlyList<Creature> targets)
     {
-        await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), Creature, DanceStrength, Creature, null);
         await CreatureCmd.GainBlock(Creature, DanceBlock, ValueProp.Move, null);
+        await PowerCmd.Apply<StrengthPower>(new ThrowingPlayerChoiceContext(), Creature, DanceStrength, Creature, null);
+        await PowerCmd.Apply<DexterityPower>(new ThrowingPlayerChoiceContext(), Creature, DanceDexterity, Creature, null);
     }
 
     private async Task RiposteMove(IReadOnlyList<Creature> targets)
@@ -150,7 +152,7 @@ public sealed class DancingBlade : CustomMonsterModel
 
     private async Task Stunned(IReadOnlyList<Creature> targets)
     {
-        // Stunned — does nothing, next move is Fell
+        // Stunned — does nothing.
         await Cmd.Wait(0.5f);
     }
 
@@ -158,7 +160,6 @@ public sealed class DancingBlade : CustomMonsterModel
     public async Task OnStagger()
     {
         await Cmd.Wait(0.3f);
-
-        SetMoveImmediate(_stunnedState, true);
+        await CreatureCmd.Stun(this.Creature);
     }
 }
